@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <character id="edbe0003-0d59-4924-99cc-833cb96e2fc1" version="3">
 	<created_date>2023 Dec 8</created_date>
-	<modified_date>2024 May 25 13:25</modified_date>
+	<modified_date>2024 May 26 13:28</modified_date>
 	<profile>
 		<player_name>newist</player_name>
 		<campaign>&#1059;&#1073;&#1083;&#1102;&#1076;&#1086;&#1095;&#1085;&#1072;&#1103;</campaign>
@@ -1108,10 +1108,10 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 		</portrait>
 	</profile>
 	<HP>0</HP>
-	<current_hp>10</current_hp>
+	<current_hp>12</current_hp>
 	<FP>0</FP>
-	<current_fp>3</current_fp>
-	<total_points>142</total_points>
+	<current_fp>11</current_fp>
+	<total_points>144</total_points>
 	<ST>12</ST>
 	<DX>10</DX>
 	<IQ>11</IQ>
@@ -1126,202 +1126,6 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 	<advantage_list>
 		<advantage_container version="2" open="no">
 			<name>&#1055;&#1088;&#1077;&#1080;&#1084;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1072;</name>
-			<advantage version="2">
-				<name>&#1052;&#1072;&#1075;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1100;</name>
-				<type>Mental, Supernatural</type>
-				<levels>2</levels>
-				<base_points>5</base_points>
-				<points_per_level>10</points_per_level>
-				<modifier version="1" enabled="no">
-					<name>&#1058;&#1072;&#1085;&#1077;&#1094;</name>
-					<cost type="percentage">-40</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1057;&#1086;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077; &#1074;&#1086; &#1090;&#1100;&#1084;&#1077;</name>
-					<cost type="percentage">-50</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1057;&#1086;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077; &#1076;&#1085;&#1077;&#1084;</name>
-					<cost type="percentage">-40</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1052;&#1091;&#1079;&#1099;&#1082;&#1072;&#1085;&#1090;</name>
-					<cost type="percentage">-50</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1057;&#1086;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077; &#1085;&#1086;&#1095;&#1100;&#1102;</name>
-					<cost type="percentage">-40</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1058;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1076;&#1085;&#1072; &#1096;&#1082;&#1086;&#1083;&#1072;</name>
-					<cost type="percentage">-40</cost>
-					<affects>levels only</affects>
-					<notes> @&#1064;&#1082;&#1086;&#1083;&#1072; @</notes>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1054;&#1076;&#1080;&#1085;&#1086;&#1095;&#1082;&#1072;</name>
-					<cost type="percentage">-40</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1055;&#1077;&#1089;&#1085;&#1103;</name>
-					<cost type="percentage">-40</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<reference>B66</reference>
-				<categories>
-					<category>Advantage</category>
-				</categories>
-				<spell_bonus all_colleges="yes">
-					<amount per_level="yes">1</amount>
-				</spell_bonus>
-				<skill_bonus>
-					<name compare="is">&#1058;&#1072;&#1091;&#1084;&#1072;&#1090;&#1086;&#1083;&#1086;&#1075;&#1080;&#1103;</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-			</advantage>
-			<advantage version="2">
-				<name>&#1058;&#1072;&#1083;&#1072;&#1085;&#1090; ( &#1041;&#1086;&#1081;&#1082;&#1086; )</name>
-				<type></type>
-				<levels>4</levels>
-				<points_per_level>5</points_per_level>
-				<modifier version="1" enabled="no">
-					<name>&#1041;&#1086;&#1085;&#1091;&#1089; &#1088;&#1077;&#1072;&#1082;&#1094;&#1080;&#1080;</name>
-					<cost type="percentage">0</cost>
-					<affects>total</affects>
-					<notes> @&#1041;&#1086;&#1085;&#1091;&#1089; &#1088;&#1077;&#1072;&#1082;&#1094;&#1080;&#1080; @</notes>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1072;&#1103; &#1074;&#1099;&#1075;&#1086;&#1076;&#1072;</name>
-					<cost type="percentage">0</cost>
-					<affects>total</affects>
-					<notes> @&#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1072;&#1103; &#1074;&#1099;&#1075;&#1086;&#1076;&#1072; @</notes>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1072;&#1103; &#1089;&#1090;&#1086;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;</name>
-					<cost type="points">0</cost>
-					<affects>levels only</affects>
-				</modifier>
-				<reference>B89</reference>
-				<categories>
-					<category>Advantage</category>
-					<category>&#1058;&#1072;&#1083;&#1072;&#1085;&#1090;</category>
-				</categories>
-				<skill_bonus>
-					<name compare="is">&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-				<skill_bonus>
-					<name compare="is">&#1050;&#1086;&#1087;&#1100;&#1077;</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-				<skill_bonus>
-					<name compare="is">&#1050;&#1088;&#1091;&#1075;&#1086;&#1074;&#1072;&#1103; &#1072;&#1090;&#1072;&#1082;&#1072;*</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-				<skill_bonus>
-					<name compare="is">&#1051;&#1091;&#1082;</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-				<skill_bonus>
-					<name compare="is">&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-				<skill_bonus>
-					<name compare="is">&#1044;&#1088;&#1072;&#1082;&#1072;</name>
-					<specialization compare="is anything"></specialization>
-					<amount per_level="yes">1</amount>
-				</skill_bonus>
-			</advantage>
-			<advantage version="2">
-				<name>&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1056;&#1077;&#1078;&#1091;&#1097;&#1077;&#1077; ( &#1054;&#1073;&#1083;&#1086;&#1084;&#1086;&#1082; &#1088;&#1086;&#1075;&#1072;)</name>
-				<type>Physical, Exotic</type>
-				<base_points>7</base_points>
-				<melee_weapon>
-					<damage>thr:+1 cut</damage>
-					<reach>C</reach>
-					<parry>0</parry>
-					<block>No</block>
-					<default>
-						<type>Skill</type>
-						<name>&#1044;&#1088;&#1072;&#1082;&#1072;</name>
-						<modifier>0</modifier>
-					</default>
-					<default>
-						<type>DX</type>
-						<modifier>0</modifier>
-					</default>
-				</melee_weapon>
-				<reference>B88</reference>
-				<categories>
-					<category>Advantage</category>
-				</categories>
-			</advantage>
-			<advantage version="2">
-				<name>&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1044;&#1088;&#1086;&#1073;&#1103;&#1097;&#1077;&#1077; ( &#1056;&#1086;&#1075;&#1072;)</name>
-				<type>Physical, Exotic</type>
-				<base_points>5</base_points>
-				<melee_weapon>
-					<damage>thr:+1 cr</damage>
-					<reach>C</reach>
-					<parry>0</parry>
-					<block>No</block>
-					<default>
-						<type>DX</type>
-						<modifier>0</modifier>
-					</default>
-					<default>
-						<type>Skill</type>
-						<name>&#1044;&#1088;&#1072;&#1082;&#1072;</name>
-						<modifier>0</modifier>
-					</default>
-				</melee_weapon>
-				<reference>B88</reference>
-				<categories>
-					<category>Advantage</category>
-				</categories>
-			</advantage>
-			<advantage version="2">
-				<name>&#1059;&#1089;&#1090;&#1086;&#1081;&#1095;&#1080;&#1074;&#1086;&#1089;&#1090;&#1100; &#1082; &#1090;&#1077;&#1084;&#1087;&#1077;&#1088;&#1072;&#1090;&#1091;&#1088;&#1077;</name>
-				<type></type>
-				<levels>5</levels>
-				<points_per_level>1</points_per_level>
-				<reference>B93</reference>
-				<categories>
-					<category>Advantage</category>
-				</categories>
-			</advantage>
-			<advantage version="2">
-				<name>&#1040;&#1076;&#1072;&#1087;&#1090;&#1072;&#1094;&#1080;&#1103; &#1082; &#1090;&#1077;&#1084;&#1085;&#1086;&#1090;&#1077;</name>
-				<type></type>
-				<levels>3</levels>
-				<points_per_level>1</points_per_level>
-				<reference>B71</reference>
-				<categories>
-					<category>Advantage</category>
-				</categories>
-			</advantage>
-			<advantage version="2">
-				<name>&#1041;&#1077;&#1089;&#1089;&#1090;&#1088;&#1072;&#1096;&#1080;&#1077;</name>
-				<type></type>
-				<levels>1</levels>
-				<points_per_level>2</points_per_level>
-				<reference>B55</reference>
-				<categories>
-					<category>Advantage</category>
-				</categories>
-			</advantage>
 			<advantage version="2">
 				<name>&#1071;&#1079;&#1099;&#1082;: &#1054;&#1073;&#1097;&#1080;&#1081;, &#1080;&#1085;&#1092;&#1077;&#1088;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081;</name>
 				<type></type>
@@ -1393,18 +1197,213 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 					<category>&#1071;&#1079;&#1099;&#1082;</category>
 				</categories>
 			</advantage>
+			<advantage version="2">
+				<name>&#1059;&#1089;&#1090;&#1086;&#1081;&#1095;&#1080;&#1074;&#1086;&#1089;&#1090;&#1100; &#1082; &#1090;&#1077;&#1084;&#1087;&#1077;&#1088;&#1072;&#1090;&#1091;&#1088;&#1077;</name>
+				<type></type>
+				<levels>5</levels>
+				<points_per_level>1</points_per_level>
+				<reference>B93</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+			</advantage>
+			<advantage version="2">
+				<name>&#1058;&#1072;&#1083;&#1072;&#1085;&#1090; ( &#1041;&#1086;&#1081;&#1082;&#1086; )</name>
+				<type></type>
+				<levels>4</levels>
+				<points_per_level>5</points_per_level>
+				<modifier version="1" enabled="no">
+					<name>&#1041;&#1086;&#1085;&#1091;&#1089; &#1088;&#1077;&#1072;&#1082;&#1094;&#1080;&#1080;</name>
+					<cost type="percentage">0</cost>
+					<affects>total</affects>
+					<notes> @&#1041;&#1086;&#1085;&#1091;&#1089; &#1088;&#1077;&#1072;&#1082;&#1094;&#1080;&#1080; @</notes>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1072;&#1103; &#1074;&#1099;&#1075;&#1086;&#1076;&#1072;</name>
+					<cost type="percentage">0</cost>
+					<affects>total</affects>
+					<notes> @&#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1072;&#1103; &#1074;&#1099;&#1075;&#1086;&#1076;&#1072; @</notes>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1072;&#1103; &#1089;&#1090;&#1086;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;</name>
+					<cost type="points">0</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<reference>B89</reference>
+				<categories>
+					<category>Advantage</category>
+					<category>&#1058;&#1072;&#1083;&#1072;&#1085;&#1090;</category>
+				</categories>
+				<skill_bonus>
+					<name compare="is">&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+				<skill_bonus>
+					<name compare="is">&#1050;&#1086;&#1087;&#1100;&#1077;</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+				<skill_bonus>
+					<name compare="is">&#1050;&#1088;&#1091;&#1075;&#1086;&#1074;&#1072;&#1103; &#1072;&#1090;&#1072;&#1082;&#1072;*</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+				<skill_bonus>
+					<name compare="is">&#1051;&#1091;&#1082;</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+				<skill_bonus>
+					<name compare="is">&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+				<skill_bonus>
+					<name compare="is">&#1044;&#1088;&#1072;&#1082;&#1072;</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+			</advantage>
+			<advantage version="2">
+				<name>&#1052;&#1072;&#1075;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1100;</name>
+				<type>Mental, Supernatural</type>
+				<levels>2</levels>
+				<base_points>5</base_points>
+				<points_per_level>10</points_per_level>
+				<modifier version="1" enabled="no">
+					<name>&#1058;&#1072;&#1085;&#1077;&#1094;</name>
+					<cost type="percentage">-40</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1057;&#1086;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077; &#1074;&#1086; &#1090;&#1100;&#1084;&#1077;</name>
+					<cost type="percentage">-50</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1057;&#1086;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077; &#1076;&#1085;&#1077;&#1084;</name>
+					<cost type="percentage">-40</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1052;&#1091;&#1079;&#1099;&#1082;&#1072;&#1085;&#1090;</name>
+					<cost type="percentage">-50</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1057;&#1086;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077; &#1085;&#1086;&#1095;&#1100;&#1102;</name>
+					<cost type="percentage">-40</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1058;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1076;&#1085;&#1072; &#1096;&#1082;&#1086;&#1083;&#1072;</name>
+					<cost type="percentage">-40</cost>
+					<affects>levels only</affects>
+					<notes> @&#1064;&#1082;&#1086;&#1083;&#1072; @</notes>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1054;&#1076;&#1080;&#1085;&#1086;&#1095;&#1082;&#1072;</name>
+					<cost type="percentage">-40</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1055;&#1077;&#1089;&#1085;&#1103;</name>
+					<cost type="percentage">-40</cost>
+					<affects>levels only</affects>
+				</modifier>
+				<reference>B66</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+				<spell_bonus all_colleges="yes">
+					<amount per_level="yes">1</amount>
+				</spell_bonus>
+				<skill_bonus>
+					<name compare="is">&#1058;&#1072;&#1091;&#1084;&#1072;&#1090;&#1086;&#1083;&#1086;&#1075;&#1080;&#1103;</name>
+					<specialization compare="is anything"></specialization>
+					<amount per_level="yes">1</amount>
+				</skill_bonus>
+			</advantage>
+			<advantage version="2">
+				<name>&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1056;&#1077;&#1078;&#1091;&#1097;&#1077;&#1077; ( &#1054;&#1073;&#1083;&#1086;&#1084;&#1086;&#1082; &#1088;&#1086;&#1075;&#1072;)</name>
+				<type>Physical, Exotic</type>
+				<base_points>7</base_points>
+				<melee_weapon>
+					<damage>thr:+1 cut</damage>
+					<reach>C</reach>
+					<parry>0</parry>
+					<block>No</block>
+					<default>
+						<type>Skill</type>
+						<name>&#1044;&#1088;&#1072;&#1082;&#1072;</name>
+						<modifier>0</modifier>
+					</default>
+					<default>
+						<type>DX</type>
+						<modifier>0</modifier>
+					</default>
+				</melee_weapon>
+				<reference>B88</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+			</advantage>
+			<advantage version="2">
+				<name>&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1044;&#1088;&#1086;&#1073;&#1103;&#1097;&#1077;&#1077; ( &#1056;&#1086;&#1075;&#1072;)</name>
+				<type>Physical, Exotic</type>
+				<base_points>5</base_points>
+				<melee_weapon>
+					<damage>thr:+1 cr</damage>
+					<reach>C</reach>
+					<parry>0</parry>
+					<block>No</block>
+					<default>
+						<type>DX</type>
+						<modifier>0</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1044;&#1088;&#1072;&#1082;&#1072;</name>
+						<modifier>0</modifier>
+					</default>
+				</melee_weapon>
+				<reference>B88</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+			</advantage>
+			<advantage version="2">
+				<name>&#1041;&#1077;&#1089;&#1089;&#1090;&#1088;&#1072;&#1096;&#1080;&#1077;</name>
+				<type></type>
+				<levels>1</levels>
+				<points_per_level>2</points_per_level>
+				<reference>B55</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+			</advantage>
+			<advantage version="2">
+				<name>&#1040;&#1076;&#1072;&#1087;&#1090;&#1072;&#1094;&#1080;&#1103; &#1082; &#1090;&#1077;&#1084;&#1085;&#1086;&#1090;&#1077;</name>
+				<type></type>
+				<levels>3</levels>
+				<points_per_level>1</points_per_level>
+				<reference>B71</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="no">
 			<name>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1082;&#1080;</name>
 			<advantage version="2">
-				<name>&#1047;&#1072;&#1073;&#1083;&#1091;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103;</name>
+				<name>&#1060;&#1080;&#1083;&#1072;&#1085;&#1090;&#1088;&#1086;&#1087;&#1080;&#1103;</name>
 				<type></type>
-				<levels>0</levels>
-				<base_points>-1</base_points>
-				<reference>B164</reference>
-				<notes> &#1050;&#1088;&#1091;&#1075;&#1086;&#1084; &#1078;&#1091;&#1083;&#1100;&#1105;</notes>
+				<base_points>-15</base_points>
+				<cr>12</cr>
+				<reference>B125</reference>
 				<categories>
-					<category>&#1041;&#1079;&#1080;&#1082;</category>
+					<category>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
@@ -1428,91 +1427,13 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				</skill_bonus>
 			</advantage>
 			<advantage version="2">
-				<name>&#1042;&#1085;&#1077;&#1096;&#1085;&#1086;&#1089;&#1090;&#1100;</name>
+				<name>&#1054;&#1076;&#1085;&#1086;&#1075;&#1083;&#1072;&#1079;&#1099;&#1081;</name>
 				<type></type>
-				<modifier version="1" enabled="no">
-					<name>&#1059;&#1085;&#1080;&#1074;&#1077;&#1088;&#1089;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; </name>
-					<cost type="percentage">25</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1057; &#1087;&#1086;&#1083;&#1082;&#1080; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090;</name>
-					<cost type="percentage">-50</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1040;&#1085;&#1076;&#1088;&#1086;&#1075;&#1080;&#1085;&#1085;&#1099;&#1081;</name>
-					<cost type="points">0</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1042;&#1087;&#1077;&#1095;&#1072;&#1090;&#1083;&#1103;&#1102;&#1097;&#1072;&#1103;</name>
-					<cost type="points">0</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1055;&#1088;&#1080;&#1074;&#1083;&#1077;&#1082;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077;</name>
-					<cost type="points">4</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1057;&#1088;&#1077;&#1076;&#1085;&#1103;&#1103;</name>
-					<cost type="points">0</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1059;&#1078;&#1072;&#1089;&#1072;&#1102;&#1097;&#1072;&#1103;</name>
-					<cost type="points">-24</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1063;&#1091;&#1076;&#1086;&#1074;&#1080;&#1097;&#1085;&#1072;&#1103;</name>
-					<cost type="points">-20</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1054;&#1090;&#1074;&#1088;&#1072;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1072;&#1103;</name>
-					<cost type="points">-16</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1">
-					<name>&#1059;&#1088;&#1086;&#1076;&#1083;&#1080;&#1074;&#1072;&#1103;</name>
-					<cost type="points">-8</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1053;&#1077;&#1087;&#1088;&#1080;&#1074;&#1083;&#1077;&#1082;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1072;&#1103;</name>
-					<cost type="points">-4</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1050;&#1088;&#1072;&#1089;&#1080;&#1074;&#1099;&#1081;</name>
-					<cost type="points">12</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1050;&#1088;&#1072;&#1089;&#1080;&#1074;&#1099;&#1081;</name>
-					<cost type="points">12</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1054;&#1095;&#1077;&#1085;&#1100; &#1050;&#1088;&#1072;&#1089;&#1080;&#1074;&#1099;&#1081;</name>
-					<cost type="points">16</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1054;&#1095;&#1077;&#1085;&#1100; &#1082;&#1088;&#1072;&#1089;&#1080;&#1074;&#1072;&#1103; </name>
-					<cost type="points">16</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1" enabled="no">
-					<name>&#1047;&#1072;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</name>
-					<cost type="points">20</cost>
-					<affects>total</affects>
-				</modifier>
-				<reference>B21</reference>
+				<base_points>-15</base_points>
+				<reference>B147</reference>
+				<notes>-3 &#1082; &#1076;&#1080;&#1089;&#1090;&#1072;&#1085;&#1094;&#1080;&#1086;&#1085;&#1085;&#1086;&#1081; &#1072;&#1090;&#1072;&#1082;&#1077; &#1073;&#1077;&#1079; &#1087;&#1088;&#1080;&#1094;&#1077;&#1083;&#1080;&#1074;&#1072;&#1085;&#1080;&#1103;</notes>
 				<categories>
-					<category>Advantage</category>
+					<category>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
@@ -1526,23 +1447,14 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>&#1054;&#1076;&#1085;&#1086;&#1075;&#1083;&#1072;&#1079;&#1099;&#1081;</name>
+				<name>&#1047;&#1072;&#1073;&#1083;&#1091;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103;</name>
 				<type></type>
-				<base_points>-15</base_points>
-				<reference>B147</reference>
-				<notes>-3 &#1082; &#1076;&#1080;&#1089;&#1090;&#1072;&#1085;&#1094;&#1080;&#1086;&#1085;&#1085;&#1086;&#1081; &#1072;&#1090;&#1072;&#1082;&#1077; &#1073;&#1077;&#1079; &#1087;&#1088;&#1080;&#1094;&#1077;&#1083;&#1080;&#1074;&#1072;&#1085;&#1080;&#1103;</notes>
+				<levels>0</levels>
+				<base_points>-1</base_points>
+				<reference>B164</reference>
+				<notes> &#1050;&#1088;&#1091;&#1075;&#1086;&#1084; &#1078;&#1091;&#1083;&#1100;&#1105;</notes>
 				<categories>
-					<category>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;</category>
-				</categories>
-			</advantage>
-			<advantage version="2">
-				<name>&#1060;&#1080;&#1083;&#1072;&#1085;&#1090;&#1088;&#1086;&#1087;&#1080;&#1103;</name>
-				<type></type>
-				<base_points>-15</base_points>
-				<cr>12</cr>
-				<reference>B125</reference>
-				<categories>
-					<category>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;</category>
+					<category>&#1041;&#1079;&#1080;&#1082;</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
@@ -1663,29 +1575,234 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 					<category>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;</category>
 				</categories>
 			</advantage>
+			<advantage version="2">
+				<name>&#1042;&#1085;&#1077;&#1096;&#1085;&#1086;&#1089;&#1090;&#1100;</name>
+				<type></type>
+				<modifier version="1" enabled="no">
+					<name>&#1059;&#1085;&#1080;&#1074;&#1077;&#1088;&#1089;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; </name>
+					<cost type="percentage">25</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1057; &#1087;&#1086;&#1083;&#1082;&#1080; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090;</name>
+					<cost type="percentage">-50</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1040;&#1085;&#1076;&#1088;&#1086;&#1075;&#1080;&#1085;&#1085;&#1099;&#1081;</name>
+					<cost type="points">0</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1042;&#1087;&#1077;&#1095;&#1072;&#1090;&#1083;&#1103;&#1102;&#1097;&#1072;&#1103;</name>
+					<cost type="points">0</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1055;&#1088;&#1080;&#1074;&#1083;&#1077;&#1082;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077;</name>
+					<cost type="points">4</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1057;&#1088;&#1077;&#1076;&#1085;&#1103;&#1103;</name>
+					<cost type="points">0</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1059;&#1078;&#1072;&#1089;&#1072;&#1102;&#1097;&#1072;&#1103;</name>
+					<cost type="points">-24</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1063;&#1091;&#1076;&#1086;&#1074;&#1080;&#1097;&#1085;&#1072;&#1103;</name>
+					<cost type="points">-20</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1054;&#1090;&#1074;&#1088;&#1072;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1072;&#1103;</name>
+					<cost type="points">-16</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1">
+					<name>&#1059;&#1088;&#1086;&#1076;&#1083;&#1080;&#1074;&#1072;&#1103;</name>
+					<cost type="points">-8</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1053;&#1077;&#1087;&#1088;&#1080;&#1074;&#1083;&#1077;&#1082;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1072;&#1103;</name>
+					<cost type="points">-4</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1050;&#1088;&#1072;&#1089;&#1080;&#1074;&#1099;&#1081;</name>
+					<cost type="points">12</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1050;&#1088;&#1072;&#1089;&#1080;&#1074;&#1099;&#1081;</name>
+					<cost type="points">12</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1054;&#1095;&#1077;&#1085;&#1100; &#1050;&#1088;&#1072;&#1089;&#1080;&#1074;&#1099;&#1081;</name>
+					<cost type="points">16</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1054;&#1095;&#1077;&#1085;&#1100; &#1082;&#1088;&#1072;&#1089;&#1080;&#1074;&#1072;&#1103; </name>
+					<cost type="points">16</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1" enabled="no">
+					<name>&#1047;&#1072;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</name>
+					<cost type="points">20</cost>
+					<affects>total</affects>
+				</modifier>
+				<reference>B21</reference>
+				<categories>
+					<category>Advantage</category>
+				</categories>
+			</advantage>
 		</advantage_container>
 	</advantage_list>
 	<skill_list>
-		<skill version="2">
-			<name>&#1050;&#1091;&#1079;&#1085;&#1077;&#1094;</name>
-			<specialization>&#1046;&#1077;&#1083;&#1077;&#1079;&#1086;</specialization>
-			<tech_level>4</tech_level>
-			<difficulty>IQ/A</difficulty>
-			<points>8</points>
-			<reference>B221</reference>
-			<categories>
-				<category>&#1056;&#1077;&#1084;&#1077;&#1089;&#1083;&#1086;</category>
-			</categories>
-			<default>
-				<type>IQ</type>
-				<modifier>-5</modifier>
-			</default>
-			<default>
-				<type>Skill</type>
-				<name>&#1050;&#1091;&#1079;&#1085;&#1077;&#1094;</name>
-				<modifier>-4</modifier>
-			</default>
-		</skill>
+		<skill_container version="2" open="yes">
+			<name>&#1041;&#1086;&#1081;</name>
+			<skill version="2">
+				<name>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;</name>
+				<difficulty>DX/E</difficulty>
+				<points>2</points>
+				<reference>B186</reference>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1042; &#1044;&#1072;&#1083;&#1100;&#1085;&#1077;&#1084; &#1041;&#1086;&#1102;</category>
+				</categories>
+				<default>
+					<type>DX</type>
+					<modifier>-4</modifier>
+				</default>
+			</skill>
+			<skill version="2">
+				<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
+				<difficulty>DX/A</difficulty>
+				<points>8</points>
+				<reference>B209</reference>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
+				</categories>
+				<default>
+					<type>Skill</type>
+					<name>&#1055;&#1072;&#1083;&#1072;&#1096;</name>
+					<modifier>-4</modifier>
+				</default>
+				<default>
+					<type>Skill</type>
+					<name>&#1057;&#1080;&#1083;&#1086;&#1074;&#1086;&#1081; &#1084;&#1077;&#1095;</name>
+					<modifier>-4</modifier>
+				</default>
+				<default>
+					<type>DX</type>
+					<modifier>-5</modifier>
+				</default>
+			</skill>
+			<skill version="2">
+				<name>&#1044;&#1088;&#1072;&#1082;&#1072;</name>
+				<difficulty>DX/E</difficulty>
+				<points>1</points>
+				<reference>B182</reference>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
+				</categories>
+				<weapon_bonus>
+					<name compare="is">&#1044;&#1088;&#1072;&#1082;&#1072;</name>
+					<specialization compare="is anything"></specialization>
+					<level compare="at least">2</level>
+					<amount per_level="yes">1</amount>
+				</weapon_bonus>
+			</skill>
+			<skill version="2">
+				<name>&#1050;&#1086;&#1087;&#1100;&#1077;</name>
+				<difficulty>DX/A</difficulty>
+				<points>2</points>
+				<reference>B208</reference>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
+				</categories>
+				<default>
+					<type>DX</type>
+					<modifier>-5</modifier>
+				</default>
+				<default>
+					<type>Skill</type>
+					<name>&#1044;&#1088;&#1077;&#1074;&#1082;&#1086;&#1074;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;</name>
+					<modifier>-4</modifier>
+				</default>
+				<default>
+					<type>Skill</type>
+					<name>&#1055;&#1086;&#1089;&#1086;&#1093;</name>
+					<modifier>-2</modifier>
+				</default>
+			</skill>
+			<technique version="2" limit="0">
+				<name>&#1050;&#1088;&#1091;&#1075;&#1086;&#1074;&#1072;&#1103; &#1072;&#1090;&#1072;&#1082;&#1072;*</name>
+				<difficulty>H</difficulty>
+				<points>2</points>
+				<reference>B232,MA89</reference>
+				<default>
+					<type>Skill</type>
+					<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
+					<modifier>-5</modifier>
+				</default>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1050;&#1080;&#1085;&#1077;&#1084;&#1072;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1055;&#1088;&#1080;&#1077;&#1084;&#1099;</category>
+					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
+				</categories>
+			</technique>
+			<skill version="2">
+				<name>&#1051;&#1091;&#1082;</name>
+				<difficulty>DX/A</difficulty>
+				<points>2</points>
+				<reference>B182</reference>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1042; &#1044;&#1072;&#1083;&#1100;&#1085;&#1077;&#1084; &#1041;&#1086;&#1102;</category>
+				</categories>
+				<default>
+					<type>DX</type>
+					<modifier>-5</modifier>
+				</default>
+			</skill>
+			<skill version="2">
+				<name>&#1052;&#1077;&#1090;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;</name>
+				<specialization>&#1050;&#1086;&#1087;&#1100;&#1077;</specialization>
+				<difficulty>DX/E</difficulty>
+				<points>2</points>
+				<reference>B226</reference>
+				<categories>
+					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
+					<category>&#1042; &#1044;&#1072;&#1083;&#1100;&#1085;&#1077;&#1084; &#1041;&#1086;&#1102;</category>
+				</categories>
+				<default>
+					<type>DX</type>
+					<modifier>-4</modifier>
+				</default>
+				<default>
+					<type>Skill</type>
+					<name>&#1050;&#1086;&#1087;&#1100;&#1077;&#1084;&#1077;&#1090;&#1072;&#1083;&#1082;&#1072;</name>
+					<modifier>-4</modifier>
+				</default>
+				<default>
+					<type>Skill</type>
+					<name>&#1052;&#1077;&#1090;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;</name>
+					<specialization>&#1043;&#1072;&#1088;&#1087;&#1091;&#1085;</specialization>
+					<modifier>-2</modifier>
+				</default>
+			</skill>
+		</skill_container>
 		<skill version="2">
 			<name>&#1042;&#1077;&#1088;&#1093;&#1086;&#1074;&#1072;&#1103; &#1077;&#1079;&#1076;&#1072;</name>
 			<specialization>&#1051;&#1086;&#1096;&#1072;&#1076;&#1100;</specialization>
@@ -1704,6 +1821,30 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				<name>&#1054;&#1073;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1077; &#1089; &#1078;&#1080;&#1074;&#1086;&#1090;&#1085;&#1099;&#1084;&#1080;</name>
 				<specialization>&#1051;&#1086;&#1096;&#1072;&#1076;&#1100;</specialization>
 				<modifier>-3</modifier>
+			</default>
+		</skill>
+		<skill version="2">
+			<name>&#1042;&#1088;&#1072;&#1095;&#1077;&#1073;&#1085;&#1086;&#1077; &#1076;&#1077;&#1083;&#1086;</name>
+			<tech_level>4</tech_level>
+			<difficulty>IQ/H</difficulty>
+			<points>4</points>
+			<reference>B213</reference>
+			<categories>
+				<category>&#1052;&#1077;&#1076;&#1080;&#1094;&#1080;&#1085;&#1072;</category>
+			</categories>
+			<default>
+				<type>IQ</type>
+				<modifier>-7</modifier>
+			</default>
+			<default>
+				<type>Skill</type>
+				<name>&#1055;&#1077;&#1088;&#1074;&#1072;&#1103; &#1087;&#1086;&#1084;&#1086;&#1097;&#1100;</name>
+				<modifier>-11</modifier>
+			</default>
+			<default>
+				<type>Skill</type>
+				<name>&#1042;&#1077;&#1090;&#1077;&#1088;&#1080;&#1085;&#1072;&#1088;&#1080;&#1103;</name>
+				<modifier>-5</modifier>
 			</default>
 		</skill>
 		<skill version="2">
@@ -1744,6 +1885,26 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				<type>Skill</type>
 				<name>&#1040;&#1088;&#1090;&#1080;&#1089;&#1090;&#1080;&#1079;&#1084;</name>
 				<modifier>-5</modifier>
+			</default>
+		</skill>
+		<skill version="2">
+			<name>&#1050;&#1091;&#1079;&#1085;&#1077;&#1094;</name>
+			<specialization>&#1046;&#1077;&#1083;&#1077;&#1079;&#1086;</specialization>
+			<tech_level>4</tech_level>
+			<difficulty>IQ/A</difficulty>
+			<points>8</points>
+			<reference>B221</reference>
+			<categories>
+				<category>&#1056;&#1077;&#1084;&#1077;&#1089;&#1083;&#1086;</category>
+			</categories>
+			<default>
+				<type>IQ</type>
+				<modifier>-5</modifier>
+			</default>
+			<default>
+				<type>Skill</type>
+				<name>&#1050;&#1091;&#1079;&#1085;&#1077;&#1094;</name>
+				<modifier>-4</modifier>
 			</default>
 		</skill>
 		<skill version="2">
@@ -1889,30 +2050,6 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				<category>&#1069;&#1079;&#1086;&#1090;&#1077;&#1088;&#1080;&#1082;&#1072;</category>
 			</categories>
 		</skill>
-		<skill version="2">
-			<name>&#1042;&#1088;&#1072;&#1095;&#1077;&#1073;&#1085;&#1086;&#1077; &#1076;&#1077;&#1083;&#1086;</name>
-			<tech_level>4</tech_level>
-			<difficulty>IQ/H</difficulty>
-			<points>4</points>
-			<reference>B213</reference>
-			<categories>
-				<category>&#1052;&#1077;&#1076;&#1080;&#1094;&#1080;&#1085;&#1072;</category>
-			</categories>
-			<default>
-				<type>IQ</type>
-				<modifier>-7</modifier>
-			</default>
-			<default>
-				<type>Skill</type>
-				<name>&#1055;&#1077;&#1088;&#1074;&#1072;&#1103; &#1087;&#1086;&#1084;&#1086;&#1097;&#1100;</name>
-				<modifier>-11</modifier>
-			</default>
-			<default>
-				<type>Skill</type>
-				<name>&#1042;&#1077;&#1090;&#1077;&#1088;&#1080;&#1085;&#1072;&#1088;&#1080;&#1103;</name>
-				<modifier>-5</modifier>
-			</default>
-		</skill>
 		<technique version="2" limit="0">
 			<name>&#1062;&#1077;&#1087;&#1083;&#1103;&#1085;&#1080;&#1077; &#1079;&#1072; &#1074;&#1099;&#1089;&#1090;&#1091;&#1087;&#1099;</name>
 			<difficulty>H</difficulty>
@@ -1930,143 +2067,6 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				<category>&#1059;&#1075;&#1086;&#1083;&#1086;&#1074;&#1085;&#1086;&#1077;/&#1059;&#1083;&#1080;&#1094;&#1072;</category>
 			</categories>
 		</technique>
-		<skill_container version="2" open="yes">
-			<name>&#1041;&#1086;&#1081;</name>
-			<skill version="2">
-				<name>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;</name>
-				<difficulty>DX/E</difficulty>
-				<points>2</points>
-				<reference>B186</reference>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1042; &#1044;&#1072;&#1083;&#1100;&#1085;&#1077;&#1084; &#1041;&#1086;&#1102;</category>
-				</categories>
-				<default>
-					<type>DX</type>
-					<modifier>-4</modifier>
-				</default>
-			</skill>
-			<skill version="2">
-				<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
-				<difficulty>DX/A</difficulty>
-				<points>8</points>
-				<reference>B209</reference>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
-				</categories>
-				<default>
-					<type>Skill</type>
-					<name>&#1055;&#1072;&#1083;&#1072;&#1096;</name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1057;&#1080;&#1083;&#1086;&#1074;&#1086;&#1081; &#1084;&#1077;&#1095;</name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>DX</type>
-					<modifier>-5</modifier>
-				</default>
-			</skill>
-			<skill version="2">
-				<name>&#1044;&#1088;&#1072;&#1082;&#1072;</name>
-				<difficulty>DX/E</difficulty>
-				<points>1</points>
-				<reference>B182</reference>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
-				</categories>
-				<weapon_bonus>
-					<name compare="is">&#1044;&#1088;&#1072;&#1082;&#1072;</name>
-					<specialization compare="is anything"></specialization>
-					<level compare="at least">2</level>
-					<amount per_level="yes">1</amount>
-				</weapon_bonus>
-			</skill>
-			<skill version="2">
-				<name>&#1050;&#1086;&#1087;&#1100;&#1077;</name>
-				<difficulty>DX/A</difficulty>
-				<points>2</points>
-				<reference>B208</reference>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
-				</categories>
-				<default>
-					<type>DX</type>
-					<modifier>-5</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1044;&#1088;&#1077;&#1074;&#1082;&#1086;&#1074;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;</name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1055;&#1086;&#1089;&#1086;&#1093;</name>
-					<modifier>-2</modifier>
-				</default>
-			</skill>
-			<skill version="2">
-				<name>&#1051;&#1091;&#1082;</name>
-				<difficulty>DX/A</difficulty>
-				<points>2</points>
-				<reference>B182</reference>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1042; &#1044;&#1072;&#1083;&#1100;&#1085;&#1077;&#1084; &#1041;&#1086;&#1102;</category>
-				</categories>
-				<default>
-					<type>DX</type>
-					<modifier>-5</modifier>
-				</default>
-			</skill>
-			<skill version="2">
-				<name>&#1052;&#1077;&#1090;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;</name>
-				<specialization>&#1050;&#1086;&#1087;&#1100;&#1077;</specialization>
-				<difficulty>DX/E</difficulty>
-				<points>2</points>
-				<reference>B226</reference>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1042; &#1044;&#1072;&#1083;&#1100;&#1085;&#1077;&#1084; &#1041;&#1086;&#1102;</category>
-				</categories>
-				<default>
-					<type>DX</type>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1050;&#1086;&#1087;&#1100;&#1077;&#1084;&#1077;&#1090;&#1072;&#1083;&#1082;&#1072;</name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1052;&#1077;&#1090;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;</name>
-					<specialization>&#1043;&#1072;&#1088;&#1087;&#1091;&#1085;</specialization>
-					<modifier>-2</modifier>
-				</default>
-			</skill>
-			<technique version="2" limit="0">
-				<name>&#1050;&#1088;&#1091;&#1075;&#1086;&#1074;&#1072;&#1103; &#1072;&#1090;&#1072;&#1082;&#1072;*</name>
-				<difficulty>H</difficulty>
-				<points>2</points>
-				<reference>B232,MA89</reference>
-				<default>
-					<type>Skill</type>
-					<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
-					<modifier>-5</modifier>
-				</default>
-				<categories>
-					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
-					<category>&#1050;&#1080;&#1085;&#1077;&#1084;&#1072;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1055;&#1088;&#1080;&#1077;&#1084;&#1099;</category>
-					<category>&#1056;&#1091;&#1082;&#1086;&#1087;&#1072;&#1096;&#1085;&#1099;&#1084; &#1041;&#1086;&#1077;&#1084;</category>
-				</categories>
-			</technique>
-		</skill_container>
 	</skill_list>
 	<spell_list>
 		<spell version="2">
@@ -2460,12 +2460,117 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 					<modifier>-5</modifier>
 				</default>
 			</ranged_weapon>
-			<notes>&#1052;&#1077;&#1095; &#8220;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&#8221; &#8211; &#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095; &#1089; &#1082;&#1083;&#1080;&#1085;&#1082;&#1086;&#1084; &#1090;&#1080;&#1087;&#1072; &#1092;&#1083;&#1072;&#1084;&#1073;&#1077;&#1088;&#1075; &#1089;&#1086; &#1089;&#1083;&#1077;&#1076;&#1072;&#1084;&#1080; &#1085;&#1077;&#1073;&#1086;&#1083;&#1100;&#1096;&#1086;&#1075;&#1086; &#1085;&#1072;&#1075;&#1072;&#1088;&#1072;, &#1086;&#1089;&#1090;&#1072;&#1074;&#1096;&#1077;&#1075;&#1086;&#1089;&#1103; &#1074; &#1089;&#1083;&#1077;&#1076;&#1089;&#1090;&#1074;&#1080;&#1080; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1085;&#1080;&#1103; &#1085;&#1072; &#1085;&#1077;&#1084; &#1084;&#1072;&#1075;&#1080;&#1080;. &#1056;&#1072;&#1085;&#1077;&#1077; &#1073;&#1099;&#1083; &#1086;&#1073;&#1099;&#1095;&#1085;&#1099;&#1084; &#1084;&#1077;&#1095;&#1086;&#1084;, &#1085;&#1086; &#1087;&#1086;&#1087;&#1072;&#1074; &#1074; &#1087;&#1086;&#1088;&#1090;&#1072;&#1083; &#1085;&#1077;&#1082;&#1088;&#1086;&#1084;&#1072;&#1085;&#1090;&#1072; &#1086;&#1073;&#1088;&#1077;&#1083; &#1084;&#1072;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1089;&#1074;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072;. &#1055;&#1086; &#1078;&#1077;&#1083;&#1072;&#1085;&#1080;&#1102; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1100;&#1094;&#1072; &#1082;&#1083;&#1080;&#1085;&#1086;&#1082; &#1085;&#1072;&#1095;&#1080;&#1085;&#1072;&#1077;&#1090; &#1080;&#1079;&#1083;&#1091;&#1095;&#1072;&#1090;&#1100; &#1103;&#1088;&#1082;&#1080;&#1081; &#1089;&#1074;&#1077;&#1090;, &#1086;&#1089;&#1074;&#1077;&#1097;&#1072;&#1103; &#1087;&#1088;&#1086;&#1089;&#1090;&#1088;&#1072;&#1085;&#1089;&#1090;&#1074;&#1086; &#1074;&#1086;&#1082;&#1088;&#1091;&#1075; &#1089;&#1077;&#1073;&#1103;, &#1072; &#1090;&#1072;&#1082; &#1078;&#1077; &#1085;&#1072;&#1085;&#1086;&#1089;&#1080;&#1090; +1 &#1091;&#1088;&#1086;&#1085;&#1072; &#1074;&#1089;&#1077;&#1084; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1072;&#1084; &#1089; &#1091;&#1103;&#1079;&#1074;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;&#1102; &#1082; &#1089;&#1074;&#1077;&#1090;&#1091;. &#1042;&#1084;&#1077;&#1089;&#1090;&#1086; &#1072;&#1090;&#1072;&#1082;&#1080; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1077;&#1094; &#1084;&#1086;&#1078;&#1077;&#1090; &#1074;&#1099;&#1089;&#1090;&#1088;&#1077;&#1083;&#1080;&#1090;&#1100; &#1080;&#1079; &#1082;&#1086;&#1085;&#1095;&#1080;&#1082;&#1072; &#1084;&#1077;&#1095;&#1072; &#1089;&#1082;&#1086;&#1085;&#1094;&#1077;&#1085;&#1090;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1085;&#1099;&#1084; &#1083;&#1091;&#1095;&#1086;&#1084; &#1089;&#1074;&#1077;&#1090;&#1072;, &#1082;&#1072;&#1082; &#1077;&#1089;&#1083;&#1080; &#1073;&#1099; &#1101;&#1090;&#1086; &#1073;&#1099;&#1083;&#1086; &#1079;&#1072;&#1082;&#1083;&#1080;&#1085;&#1072;&#1085;&#1080;&#1077; &#1057;&#1086;&#1083;&#1085;&#1077;&#1095;&#1085;&#1099;&#1081; &#1089;&#1085;&#1072;&#1088;&#1103;&#1076; (M114).</notes>
 			<categories>
 				<category>Melee Weapon</category>
 			</categories>
 		</equipment>
+		<equipment version="4" state="equipped">
+			<quantity>1</quantity>
+			<description>&#1058;&#1103;&#1078;&#1077;&#1083;&#1099;&#1081; &#1079;&#1072;&#1082;&#1088;&#1099;&#1090;&#1099;&#1081; &#1096;&#1083;&#1077;&#1084;</description>
+			<tech_level>3</tech_level>
+			<legality_class>3</legality_class>
+			<value>340</value>
+			<weight>10 lb</weight>
+			<reference>B284</reference>
+			<categories>
+				<category>Headgear</category>
+			</categories>
+			<dr_bonus>
+				<location>neck</location>
+				<amount>7</amount>
+			</dr_bonus>
+			<dr_bonus>
+				<location>face</location>
+				<amount>7</amount>
+			</dr_bonus>
+			<dr_bonus>
+				<location>skull</location>
+				<amount>7</amount>
+			</dr_bonus>
+		</equipment>
+		<equipment version="4" state="equipped">
+			<quantity>1</quantity>
+			<description>&#1040;&#1087;&#1090;&#1077;&#1095;&#1082;&#1072;  &#1087;&#1077;&#1088;&#1074;&#1086;&#1081;  &#1087;&#1086;&#1084;&#1086;&#1097;&#1080;</description>
+			<legality_class>4</legality_class>
+			<value>50</value>
+			<weight>2 lb</weight>
+			<reference>B289</reference>
+			<notes>&#1055;&#1086;&#1083;&#1085;&#1099;&#1081; &#1085;&#1072;&#1073;&#1086;&#1088; &#1076;&#1083;&#1103; &#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1103; &#1088;&#1072;&#1085;, &#1089; &#1087;&#1086;&#1074;&#1103;&#1079;&#1082;&#1072;&#1084;&#1080;, &#1084;&#1072;&#1079;&#1103;&#1084;&#1080; &#1080; &#1090;.&#1076;.</notes>
+			<categories>
+				<category>Medical Gear</category>
+			</categories>
+			<skill_bonus>
+				<name compare="is">&#1055;&#1077;&#1088;&#1074;&#1072;&#1103; &#1087;&#1086;&#1084;&#1086;&#1097;&#1100;</name>
+				<specialization compare="is anything"></specialization>
+				<amount>1</amount>
+			</skill_bonus>
+		</equipment>
+		<equipment version="4" state="equipped">
+			<quantity>1</quantity>
+			<description>&#1042;&#1077;&#1089;&#1099;  &#1080;  &#1075;&#1080;&#1088;&#1100;&#1082;</description>
+			<tech_level>1</tech_level>
+			<legality_class>4</legality_class>
+			<value>35</value>
+			<weight>3 lb</weight>
+			<reference>B289</reference>
+			<notes>&#1044;&#1083;&#1103; &#1082;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1103; &#1074;&#1077;&#1089;&#1072;</notes>
+			<categories>
+				<category>Tools</category>
+			</categories>
+		</equipment>
+		<equipment version="4" state="equipped">
+			<quantity>1</quantity>
+			<description>&#1050;&#1086;&#1078;&#1072;&#1085;&#1099;&#1077; &#1087;&#1077;&#1088;&#1095;&#1072;&#1090;&#1082;&#1080; </description>
+			<tech_level>1</tech_level>
+			<legality_class>-</legality_class>
+			<value>30</value>
+			<reference>B284</reference>
+			<categories>
+				<category>Gloves</category>
+			</categories>
+			<dr_bonus>
+				<location>hands</location>
+				<amount>2</amount>
+			</dr_bonus>
+		</equipment>
+		<equipment version="4" state="equipped">
+			<quantity>1</quantity>
+			<description>&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1081; &#1078;&#1080;&#1083;&#1077;&#1090; </description>
+			<tech_level>2</tech_level>
+			<legality_class>4</legality_class>
+			<value>150</value>
+			<weight>16 lb</weight>
+			<reference>B283</reference>
+			<categories>
+				<category>Body Armor</category>
+			</categories>
+			<dr_bonus>
+				<location>torso</location>
+				<amount>4</amount>
+			</dr_bonus>
+		</equipment>
+		<equipment version="4" state="equipped">
+			<quantity>1</quantity>
+			<description>&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1077; &#1087;&#1086;&#1085;&#1086;&#1078;&#1080;</description>
+			<tech_level>2</tech_level>
+			<legality_class>3</legality_class>
+			<value>110</value>
+			<weight>15 lb</weight>
+			<reference>B283</reference>
+			<categories>
+				<category>Limb Armor</category>
+			</categories>
+			<dr_bonus>
+				<location>legs</location>
+				<amount>4</amount>
+			</dr_bonus>
+		</equipment>
 	</equipment_list>
+	<note_list>
+		<note version="1">
+			<text>&#1052;&#1077;&#1095; &#8220;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&#8221; &#8211; &#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095; &#1089; &#1082;&#1083;&#1080;&#1085;&#1082;&#1086;&#1084; &#1090;&#1080;&#1087;&#1072; &#1092;&#1083;&#1072;&#1084;&#1073;&#1077;&#1088;&#1075; &#1089;&#1086; &#1089;&#1083;&#1077;&#1076;&#1072;&#1084;&#1080; &#1085;&#1077;&#1073;&#1086;&#1083;&#1100;&#1096;&#1086;&#1075;&#1086; &#1085;&#1072;&#1075;&#1072;&#1088;&#1072;, &#1086;&#1089;&#1090;&#1072;&#1074;&#1096;&#1077;&#1075;&#1086;&#1089;&#1103; &#1074; &#1089;&#1083;&#1077;&#1076;&#1089;&#1090;&#1074;&#1080;&#1080; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1085;&#1080;&#1103; &#1085;&#1072; &#1085;&#1077;&#1084; &#1084;&#1072;&#1075;&#1080;&#1080;. &#1056;&#1072;&#1085;&#1077;&#1077; &#1073;&#1099;&#1083; &#1086;&#1073;&#1099;&#1095;&#1085;&#1099;&#1084; &#1084;&#1077;&#1095;&#1086;&#1084;, &#1085;&#1086; &#1087;&#1086;&#1087;&#1072;&#1074; &#1074; &#1087;&#1086;&#1088;&#1090;&#1072;&#1083; &#1085;&#1077;&#1082;&#1088;&#1086;&#1084;&#1072;&#1085;&#1090;&#1072; &#1086;&#1073;&#1088;&#1077;&#1083; &#1084;&#1072;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1089;&#1074;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072;. &#1055;&#1086; &#1078;&#1077;&#1083;&#1072;&#1085;&#1080;&#1102; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1100;&#1094;&#1072; &#1082;&#1083;&#1080;&#1085;&#1086;&#1082; &#1085;&#1072;&#1095;&#1080;&#1085;&#1072;&#1077;&#1090; &#1080;&#1079;&#1083;&#1091;&#1095;&#1072;&#1090;&#1100; &#1103;&#1088;&#1082;&#1080;&#1081; &#1089;&#1074;&#1077;&#1090;, &#1086;&#1089;&#1074;&#1077;&#1097;&#1072;&#1103; &#1087;&#1088;&#1086;&#1089;&#1090;&#1088;&#1072;&#1085;&#1089;&#1090;&#1074;&#1086; &#1074;&#1086;&#1082;&#1088;&#1091;&#1075; &#1089;&#1077;&#1073;&#1103;, &#1072; &#1090;&#1072;&#1082; &#1078;&#1077; &#1085;&#1072;&#1085;&#1086;&#1089;&#1080;&#1090; +1 &#1091;&#1088;&#1086;&#1085;&#1072; &#1074;&#1089;&#1077;&#1084; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1072;&#1084; &#1089; &#1091;&#1103;&#1079;&#1074;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;&#1102; &#1082; &#1089;&#1074;&#1077;&#1090;&#1091;. &#1042;&#1084;&#1077;&#1089;&#1090;&#1086; &#1072;&#1090;&#1072;&#1082;&#1080; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1077;&#1094; &#1084;&#1086;&#1078;&#1077;&#1090; &#1074;&#1099;&#1089;&#1090;&#1088;&#1077;&#1083;&#1080;&#1090;&#1100; &#1080;&#1079; &#1082;&#1086;&#1085;&#1095;&#1080;&#1082;&#1072; &#1084;&#1077;&#1095;&#1072; &#1089;&#1082;&#1086;&#1085;&#1094;&#1077;&#1085;&#1090;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1085;&#1099;&#1084; &#1083;&#1091;&#1095;&#1086;&#1084; &#1089;&#1074;&#1077;&#1090;&#1072;, &#1082;&#1072;&#1082; &#1077;&#1089;&#1083;&#1080; &#1073;&#1099; &#1101;&#1090;&#1086; &#1073;&#1099;&#1083;&#1086; &#1079;&#1072;&#1082;&#1083;&#1080;&#1085;&#1072;&#1085;&#1080;&#1077; &#1057;&#1086;&#1083;&#1085;&#1077;&#1095;&#1085;&#1099;&#1081; &#1089;&#1085;&#1072;&#1088;&#1103;&#1076; (M114).</text>
+		</note>
+	</note_list>
 	<print_settings units="in">
 		<orientation>portrait</orientation>
 		<width>8.5</width>
