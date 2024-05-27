@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+***** BEGIN LICENSE BLOCK *****
+Copyright (c) 1998-2017 by Richard A. Wilkes. All rights reserved.
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+version 2.0. If a copy of the MPL was not distributed with this file, You
+can obtain one at http://mozilla.org/MPL/2.0/.
+
+This Source Code Form is "Incompatible With Secondary Licenses", as defined
+by the Mozilla Public License, version 2.0.
+***** END LICENSE BLOCK *****
+-->
+<head>
+    <meta charset="utf-8" />
+    <title>&#1050;&#1088;&#1072;&#1084;&#1072;&#1088; &#1041;&#1086;&#1088;&#1076;&#1077;</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            font-size: small;
+            font-weight: normal;
+            padding: 0;
+            margin: .25in;
+            margin-bottom: calc(.25in - 1em);
+        }
+
+        #sheet {
+            display: grid;
+            grid-template:
+                "personal personal"
+                "stats stats"
+                "melee melee"
+                "ranged ranged"
+                "advantages skills"
+                "spells spells"
+                "equipment equipment"
+                "notes notes";
+            grid-gap: .05in;
+        }
+
+        #footer {
+            text-align: center;
+            font-size: 80%;
+        }
+
+        .fieldblock {
+            display: grid;
+            grid-template-columns: 0fr 1fr;
+            align-items: end;
+            padding-bottom: .15em;
+        }
+
+        .fieldblock hr {
+            grid-column: 1 / span 2;
+            width: 100%;
+            border: none;
+            background-color: black;
+            height: 1px;
+            margin: 0;
+            margin-top: .2em;
+            margin-bottom: .1em;
+        }
+
+        #personal {
+            grid-area: personal;
+            display: grid;
+            grid-template:
+                "portrait identity player points"
+                "portrait description description points";
+            grid-template-columns: 0fr 1fr 1fr 0fr;
+            grid-gap: .05in;
+        }
+
+        #portrait {
+            grid-area: portrait;
+            display: grid;
+            grid-template:
+                "header"
+                "portrait";
+            grid-template-rows: 0fr auto;
+            grid-template-columns: auto;
+            border: 1px solid black;
+        }
+
+        .portrait {
+            font-size: medium;
+            width: 6.75em;
+            height: 9em;
+            background-image: url(.sources/kramar-borde.png);
+            background-size: cover;
+        }
+
+        #identity {
+            grid-area: identity;
+        }
+
+        #player {
+            grid-area: player;
+        }
+
+        #points {
+            grid-area: points;
+        }
+
+        #identity, #player, #points, #attributes, #lifting, #fphp {
+            display: grid;
+            grid-template-rows: 0fr 1fr;
+            border: 1px solid black;
+        }
+
+        #points .field,
+        #attributes .field,
+        #lifting .field,
+        #fphp .field {
+            text-align: right;
+        }
+
+        #description {
+            grid-area: description;
+            display: grid;
+            grid-template:
+                "header header header"
+                "block1 block2 block3";
+            grid-template-rows: 0fr 1fr;
+            border: 1px solid black;
+        }
+
+        #description .header {
+            grid-area: header;
+        }
+
+        #description .fieldblock:nth-child(1n+3) {
+            border-left: 1px solid black;
+        }
+
+        #stats {
+            grid-area: stats;
+            display: grid;
+            grid-template:
+                "attributes encumbrance location fphp"
+                "attributes lifting location fphp";
+            grid-template-columns: 0fr 2fr 2fr 1fr;
+            grid-gap: .05in;
+        }
+
+        #attributes {
+            grid-area: attributes;
+        }
+
+        #fphp {
+            grid-area: fphp;
+        }
+
+        #encumbrance {
+            grid-area: encumbrance;
+            grid-template:
+                "header header header header"
+                "enc load move dodge";
+        }
+
+        #lifting {
+            grid-area: lifting;
+            grid-template:
+                "header header"
+                "desc lift";
+            grid-template-columns: 1fr 0fr;
+        }
+
+        #lifting .header:first-child {
+            grid-area: header;
+        }
+
+        #location {
+            grid-area: location;
+            grid-template:
+                "header header header header"
+                "roll where penalty dr";
+            grid-template-rows: 0fr 0fr;
+            grid-auto-rows: 1fr;
+        }
+
+        #encumbrance .header:first-child,
+        #location .header:first-child {
+            grid-area: header;
+            border-bottom: 1px solid lightgray;
+        }
+
+        #encumbrance,
+        #lifting,
+        #location,
+        #melee,
+        #ranged,
+        #advantages,
+        #skills,
+        #spells,
+        #equipment,
+        #notes {
+            display: grid;
+            border: 1px solid black;
+            align-content: stretch;
+        }
+
+        #melee,
+        #ranged,
+        #advantages,
+        #skills,
+        #spells,
+        #equipment,
+        #notes {
+            grid-template-rows: repeat(1000, auto) 1fr;
+        }
+
+        #melee {
+            grid-template-columns: 1fr repeat(8, auto);
+            grid-area: melee;
+        }
+
+        #ranged {
+            grid-template-columns: 1fr repeat(10, auto);
+            grid-area: ranged;
+        }
+
+        #advantages {
+            grid-template-columns: 1fr repeat(2, auto);
+            grid-area: advantages;
+        }
+
+        #skills {
+            grid-template-columns: 1fr repeat(4, auto);
+            grid-area: skills;
+        }
+
+        #spells {
+            grid-template-columns: 1fr repeat(10, auto);
+            grid-area: spells;
+        }
+
+        #equipment {
+            grid-template-columns: auto auto 1fr repeat(6, auto);
+            grid-area: equipment;
+        }
+
+        #notes {
+            grid-template-columns: 1fr;
+            grid-area: notes;
+        }
+
+        .label {
+            text-align: right;
+            padding-left: .2em;
+            padding-right: .2em;
+            font-size: 80%;
+            white-space: nowrap;
+            align-self: center;
+        }
+
+        .field {
+            margin-right: .2em;
+        }
+
+        .field,
+        .desc,
+        .cls,
+        .college,
+        .mana,
+        .mana_maintain,
+        .time,
+        .duration,
+        .sl,
+        .rsl,
+        .qty,
+        .equipped,
+        .cost,
+        .sum_cost,
+        .weight,
+        .sum_weight,
+        .pts,
+        .ref,
+        .usage,
+        .level,
+        .parry,
+        .block,
+        .damage,
+        .reach,
+        .st,
+        .acc,
+        .range,
+        .rof,
+        .shots,
+        .bulk,
+        .rcl,
+        .enc,
+        .load,
+        .move,
+        .dodge,
+        .roll,
+        .where,
+        .penalty,
+        .dr,
+        .liftdesc,
+        .lift {
+            padding-left: .2em;
+            padding-right: .2em;
+            border-bottom: 1px solid lightgray;
+        }
+
+        #encumbrance .enc:nth-last-child(8n+4),
+        #encumbrance .load:nth-last-child(8n+3),
+        #encumbrance .move:nth-last-child(8n+2),
+        #encumbrance .dodge:nth-last-child(8n+1),
+        #lifting .liftdesc:nth-last-child(4n+2),
+        #lifting .lift:nth-last-child(4n+1),
+        #location .roll:nth-last-child(8n+4),
+        #location .where:nth-last-child(8n+3),
+        #location .penalty:nth-last-child(8n+2),
+        #location .dr:nth-last-child(8n+1),
+        #melee .desc:nth-child(even),
+        #melee .usage:nth-child(odd),
+        #melee .level:nth-child(even),
+        #melee .parry:nth-child(odd),
+        #melee .block:nth-child(even),
+        #melee .damage:nth-child(odd),
+        #melee .reach:nth-child(even),
+        #melee .st:nth-child(odd),
+        #ranged .desc:nth-child(even),
+        #ranged .usage:nth-child(odd),
+        #ranged .level:nth-child(even),
+        #ranged .acc:nth-child(odd),
+        #ranged .damage:nth-child(even),
+        #ranged .range:nth-child(odd),
+        #ranged .rof:nth-child(even),
+        #ranged .shots:nth-child(odd),
+        #ranged .bulk:nth-child(even),
+        #ranged .rcl:nth-child(odd),
+        #ranged .st:nth-child(even),
+        #advantages .desc:nth-child(even),
+        #advantages .pts:nth-child(odd),
+        #advantages .ref:nth-child(even),
+        #skills .desc:nth-child(even),
+        #skills .sl:nth-child(odd),
+        #skills .rsl:nth-child(even),
+        #skills .pts:nth-child(odd),
+        #skills .ref:nth-child(even),
+        #spells .desc:nth-child(even),
+        #spells .cls:nth-child(odd),
+        #spells .college:nth-child(even),
+        #spells .mana:nth-child(odd),
+        #spells .mana_maintain:nth-child(even),
+        #spells .time:nth-child(odd),
+        #spells .duration:nth-child(even),
+        #spells .sl:nth-child(odd),
+        #spells .rsl:nth-child(even),
+        #spells .pts:nth-child(odd),
+        #spells .ref:nth-child(even),
+        #equipment .equipped:nth-child(even),
+        #equipment .qty:nth-child(odd),
+        #equipment .desc:nth-child(even),
+        #equipment .cost:nth-child(odd),
+        #equipment .weight:nth-child(even),
+        #equipment .sum_cost:nth-child(odd),
+        #equipment .sum_weight:nth-child(even),
+        #equipment .ref:nth-child(odd),
+        #notes .desc:nth-child(even) {
+            background-color: #e8ffe8;
+        }
+
+        #equipment .desc,
+        .cls,
+        .college,
+        .mana,
+        .mana_maintain,
+        .time,
+        .duration,
+        .sl,
+        .rsl,
+        .qty,
+        .cost,
+        .sum_cost,
+        .weight,
+        .sum_weight,
+        .pts,
+        .ref,
+        .usage,
+        .level,
+        .parry,
+        .block,
+        .damage,
+        .reach,
+        .st,
+        .acc,
+        .range,
+        .rof,
+        .shots,
+        .bulk,
+        .rcl,
+        .load,
+        .move,
+        .dodge,
+        .where,
+        .penalty,
+        .dr {
+            border-left: 1px solid lightgray;
+        }
+
+        .sl,
+        .rsl,
+        .qty,
+        .equipped,
+        .cost,
+        .sum_cost,
+        .weight,
+        .sum_weight,
+        .pts,
+        .ref,
+        .level,
+        .parry,
+        .block,
+        .reach,
+        .st,
+        .acc,
+        .rof,
+        .shots,
+        .bulk,
+        .rcl,
+        .load,
+        .move,
+        .dodge,
+        .where,
+        .penalty,
+        .dr,
+        .liftdesc,
+        .lift {
+            text-align: right;
+        }
+
+        .equipped,
+        .roll {
+            text-align: center;
+        }
+
+        .where {
+            text-align: left;
+        }
+
+        .enc,
+        .load,
+        .move,
+        .dodge,
+        .roll,
+        .where,
+        .penalty,
+        .dr,
+        .liftdesc,
+        .lift {
+            color: rgb(144, 144, 144);
+            white-space: nowrap;
+        }
+
+        #lifting .field,
+        .noedit {
+            color: rgb(144, 144, 144);
+            white-space: nowrap;
+            border: none;
+        }
+
+        #melee > div,
+        #ranged > div,
+        #equipment .sum_cost,
+        #equipment .sum_weight {
+            color: rgb(144, 144, 144);
+        }
+
+        .header,
+        #melee .header,
+        #ranged .header,
+        #equipment .header {
+            background-color: black;
+            border-bottom: 1px solid black;
+            color: white;
+            text-align: center;
+            font-size: 80%;
+        }
+
+        #location .header:nth-last-child(8n+4),
+        #location .header:nth-last-child(8n+3),
+        #location .header:nth-last-child(8n+2),
+        #location .header:nth-last-child(8n+1) {
+            background-color: black;
+        }
+
+        #encumbrance > div:nth-last-child(-n+4),
+        #lifting > div:nth-last-child(-n+2),
+        #location > div:nth-last-child(-n+4) {
+            border-bottom: none;
+        }
+
+        #melee > div:nth-last-child(-n+9),
+        #ranged > div:nth-last-child(-n+11),
+        #advantages > div:nth-last-child(-n+3),
+        #skills > div:nth-last-child(-n+5),
+        #spells > div:nth-last-child(-n+11),
+        #equipment > div:nth-last-child(-n+9),
+        #notes > div:nth-last-child(-n+1) {
+            border-bottom: none;
+            grid-row: 1001;
+        }
+
+        .indent1 {
+            padding-left: 1em;
+        }
+
+        .indent2 {
+            padding-left: 2em;
+        }
+
+        .indent3 {
+            padding-left: 3em;
+        }
+
+        .indent4 {
+            padding-left: 4em;
+        }
+
+        .indent5 {
+            padding-left: 5em;
+        }
+
+        .indent6 {
+            padding-left: 6em;
+        }
+
+        .indent7 {
+            padding-left: 7em;
+        }
+
+        .indent8 {
+            padding-left: 8em;
+        }
+
+        .indent9 {
+            padding-left: 9em;
+        }
+
+        .satisfiedN {
+            color: red;
+        }
+
+        #encumbrance .current:nth-last-child(8n+4),
+        #encumbrance .current:nth-last-child(8n+3),
+        #encumbrance .current:nth-last-child(8n+2),
+        #encumbrance .current:nth-last-child(8n+1),
+        .current {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .list_note {
+            font-size: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sheet">
+        <div id="personal">
+            <div id="portrait">
+                <div class="header">Portrait</div>
+                <div class="portrait"></div>
+            </div>
+            <div id="identity">
+                <div class="header">Identity</div>
+                <div class="fieldblock">
+                    <div class="label">Name:</div>
+                    <div class="field">&#1050;&#1088;&#1072;&#1084;&#1072;&#1088; &#1041;&#1086;&#1088;&#1076;&#1077;</div>
+                    <div class="label">Title:</div>
+                    <div class="field"></div>
+                    <div class="label">Religion:</div>
+                    <div class="field"></div>
+                </div>
+            </div>
+            <div id="player">
+                <div class="header">Player Information</div>
+                <div class="fieldblock">
+                    <div class="label">Player:</div>
+                    <div class="field">newist</div>
+                    <div class="label">Campaign:</div>
+                    <div class="field">&#1059;&#1073;&#1083;&#1102;&#1076;&#1086;&#1095;&#1085;&#1072;&#1103;</div>
+                    <div class="label">Created On:</div>
+                    <div class="field">2023 Dec 8</div>
+                </div>
+            </div>
+            <div id="description">
+                <div class="header">Description</div>
+                <div class="fieldblock">
+                    <div class="label">Race:</div>
+                    <div class="field">&#1058;&#1080;&#1092;&#1083;&#1080;&#1085;&#1075;</div>
+                    <div class="label">Gender:</div>
+                    <div class="field">&#1084;&#1091;&#1078;.</div>
+                    <div class="label">Age:</div>
+                    <div class="field">24</div>
+                    <div class="label">Birthday:</div>
+                    <div class="field">Jan 16</div>
+                </div>
+                <div class="fieldblock">
+                    <div class="label">Height:</div>
+                    <div class="field">185 m</div>
+                    <div class="label">Weight:</div>
+                    <div class="field">76 kg</div>
+                    <div class="label">Size:</div>
+                    <div class="field">+0</div>
+                    <div class="label">TL:</div>
+                    <div class="field">4</div>
+                </div>
+                <div class="fieldblock">
+                    <div class="label">Hair:</div>
+                    <div class="field">&#1063;&#1105;&#1088;&#1085;&#1099;&#1077;, &#1076;&#1083;&#1080;&#1085;&#1085;&#1099;&#1077;</div>
+                    <div class="label">Eyes:</div>
+                    <div class="field">&#1046;&#1077;&#1083;&#1105;&#1085;&#1099;&#1077;</div>
+                    <div class="label">Skin:</div>
+                    <div class="field">&#1058;&#1105;&#1084;&#1085;&#1086;-&#1082;&#1088;&#1072;&#1089;&#1085;&#1072;&#1103;</div>
+                    <div class="label">Hand:</div>
+                    <div class="field">&#1055;&#1088;&#1072;&#1074;&#1072;&#1103;</div>
+                </div>
+            </div>
+            <div id="points">
+                <div class="header">144 Points</div>
+                <div class="fieldblock">
+                    <div class="label">Race:</div>
+                    <div class="field noedit">0</div>
+                    <div class="label">Attributes:</div>
+                    <div class="field noedit">45</div>
+                    <div class="label">Advantages:</div>
+                    <div class="field noedit">67</div>
+                    <div class="label">Disadvantages:</div>
+                    <div class="field noedit">-78</div>
+                    <div class="label">Quirks:</div>
+                    <div class="field noedit">-2</div>
+                    <div class="label">Skills:</div>
+                    <div class="field noedit">80</div>
+                    <div class="label">Spells:</div>
+                    <div class="field noedit">28</div>
+                    <div class="label">Unspent:</div>
+                    <div class="field">4</div>
+                </div>
+            </div>
+        </div>
+        <div id="stats">
+            <div id="attributes">
+                <div class="header">Attributes</div>
+                <div class="fieldblock">
+                    <div class="label">Strength (ST):</div>
+                    <div class="field">12</div>
+                    <div class="label">Dexterity (DX):</div>
+                    <div class="field">10</div>
+                    <div class="label">Intelligence (IQ):</div>
+                    <div class="field">11</div>
+                    <div class="label">Health (HT):</div>
+                    <div class="field">11</div>
+                    <hr>
+                    <div class="label">Will:</div>
+                    <div class="field">11</div>
+                    <div class="label">Fright Check:</div>
+                    <div class="field noedit">11</div>
+                    <hr>
+                    <div class="label">Basic Speed:</div>
+                    <div class="field">5</div>
+                    <div class="label">Basic Move:</div>
+                    <div class="field">5</div>
+                    <hr>
+                    <div class="label">Perception:</div>
+                    <div class="field">11</div>
+                    <div class="label">Vision:</div>
+                    <div class="field noedit">11</div>
+                    <div class="label">Hearing:</div>
+                    <div class="field noedit">11</div>
+                    <div class="label">Taste &amp; Smell:</div>
+                    <div class="field noedit">11</div>
+                    <div class="label">Touch:</div>
+                    <div class="field noedit">11</div>
+                    <hr>
+                    <div class="label">Thrust Damage:</div>
+                    <div class="field noedit">1d-1</div>
+                    <div class="label">Swing Damage:</div>
+                    <div class="field noedit">1d+2</div>
+                </div>
+            </div>
+            <div id="encumbrance">
+                <div class="header">Encumbrance, Move &amp; Dodge</div>
+                <div class="enc header">Level</div>
+                <div class="load header">Max Load</div>
+                <div class="move header">Move</div>
+                <div class="dodge header">Dodge</div>
+
+                
+                <div class="enc ">&#1053;&#1077;&#1090; (0)</div>
+                <div class="load ">14 kg</div>
+                <div class="move ">5</div>
+                <div class="dodge ">8</div>
+                
+                <div class="enc current">&#8226; &#1051;&#1105;&#1075;&#1082;&#1072;&#1103; (1)</div>
+                <div class="load current">28 kg</div>
+                <div class="move current">4</div>
+                <div class="dodge current">7</div>
+                
+                <div class="enc ">&#1057;&#1088;&#1077;&#1076;&#1085;&#1080;&#1077; (2)</div>
+                <div class="load ">42 kg</div>
+                <div class="move ">3</div>
+                <div class="dodge ">6</div>
+                
+                <div class="enc ">&#1058;&#1103;&#1078;&#1077;&#1083;&#1099;&#1081; (3)</div>
+                <div class="load ">84 kg</div>
+                <div class="move ">2</div>
+                <div class="dodge ">5</div>
+                
+                <div class="enc ">&#1057;&#1074;&#1077;&#1088;&#1093;&#1090;&#1103;&#1078; (4)</div>
+                <div class="load ">140 kg</div>
+                <div class="move ">1</div>
+                <div class="dodge ">4</div>
+                
+            </div>
+            <div id="lifting">
+                <div class="header">Lifting &amp; Moving Things</div>
+                <div class="liftdesc">Basic Lift:</div>
+                <div class="lift">14 kg</div>
+                <div class="liftdesc">One-Handed Lift:</div>
+                <div class="lift">28 kg</div>
+                <div class="liftdesc">Two-Handed Lift:</div>
+                <div class="lift">112 kg</div>
+                <div class="liftdesc">Shove &amp; Knock Over:</div>
+                <div class="lift">168 kg</div>
+                <div class="liftdesc">Running Shove &amp; Knock Over:</div>
+                <div class="lift">336 kg</div>
+                <div class="liftdesc">Carry on Back:</div>
+                <div class="lift">210 kg</div>
+                <div class="liftdesc">Shift Slightly:</div>
+                <div class="lift">700 kg</div>
+            </div>
+            <div id="location">
+                <div class="header">Hit Location</div>
+                <div class="roll header">Roll</div>
+                <div class="where header">Where</div>
+                <div class="penalty header">Penalty</div>
+                <div class="dr header">DR</div>
+
+                
+                <div class="roll">-</div>
+                <div class="where">&#1043;&#1083;&#1072;&#1079;</div>
+                <div class="penalty">-9</div>
+                <div class="dr">0</div>
+                
+                <div class="roll">3-4</div>
+                <div class="where">&#1063;&#1077;&#1088;&#1077;&#1087;</div>
+                <div class="penalty">-7</div>
+                <div class="dr">9</div>
+                
+                <div class="roll">5</div>
+                <div class="where">&#1051;&#1080;&#1094;&#1086;</div>
+                <div class="penalty">-5</div>
+                <div class="dr">8</div>
+                
+                <div class="roll">6-7</div>
+                <div class="where">Right Leg</div>
+                <div class="penalty">-2</div>
+                <div class="dr">4</div>
+                
+                <div class="roll">8</div>
+                <div class="where">Right Arm</div>
+                <div class="penalty">-2</div>
+                <div class="dr">0</div>
+                
+                <div class="roll">9-10</div>
+                <div class="where">&#1058;&#1091;&#1083;&#1086;&#1074;&#1080;&#1097;&#1077;</div>
+                <div class="penalty">0</div>
+                <div class="dr">4</div>
+                
+                <div class="roll">11</div>
+                <div class="where">&#1055;&#1072;&#1093;</div>
+                <div class="penalty">-3</div>
+                <div class="dr">0</div>
+                
+                <div class="roll">12</div>
+                <div class="where">Left Arm</div>
+                <div class="penalty">-2</div>
+                <div class="dr">0</div>
+                
+                <div class="roll">13-14</div>
+                <div class="where">Left Leg</div>
+                <div class="penalty">-2</div>
+                <div class="dr">4</div>
+                
+                <div class="roll">15</div>
+                <div class="where">&#1056;&#1091;&#1082;&#1072;</div>
+                <div class="penalty">-4</div>
+                <div class="dr">2</div>
+                
+                <div class="roll">16</div>
+                <div class="where">&#1053;&#1086;&#1075;&#1072;</div>
+                <div class="penalty">-4</div>
+                <div class="dr">0</div>
+                
+                <div class="roll">17-18</div>
+                <div class="where">&#1064;&#1077;&#1103;</div>
+                <div class="penalty">-5</div>
+                <div class="dr">7</div>
+                
+                <div class="roll">-</div>
+                <div class="where">&#1046;&#1080;&#1079;.&#1086;&#1088;&#1075;.</div>
+                <div class="penalty">-3</div>
+                <div class="dr">4</div>
+                
+            </div>
+            <div id="fphp">
+                <div class="header">Fatigue / Hit Points</div>
+                <div class="fieldblock">
+                    <div class="label">Current FP:</div>
+                    <div class="field">11</div>
+                    <div class="label">Basic FP:</div>
+                    <div class="field">11</div>
+                    <hr>
+                    <div class="label">Tired:</div>
+                    <div class="field noedit">3</div>
+                    <div class="label">Collapse:</div>
+                    <div class="field noedit">0</div>
+                    <div class="label">Unconscious:</div>
+                    <div class="field noedit">-11</div>
+                    <hr>
+                    <div class="label">Current HP:</div>
+                    <div class="field">12</div>
+                    <div class="label">Basic HP:</div>
+                    <div class="field">12</div>
+                    <hr>
+                    <div class="label">Reeling:</div>
+                    <div class="field noedit">3</div>
+                    <div class="label">Collapse:</div>
+                    <div class="field noedit">0</div>
+                    <div class="label">Check #1:</div>
+                    <div class="field noedit">-12</div>
+                    <div class="label">Check #2:</div>
+                    <div class="field noedit">-24</div>
+                    <div class="label">Check #3:</div>
+                    <div class="field noedit">-36</div>
+                    <div class="label">Check #4:</div>
+                    <div class="field noedit">-48</div>
+                    <div class="label">Dead:</div>
+                    <div class="field noedit">-60</div>
+                </div>
+            </div>
+        </div>
+        <div id="melee">
+            <div class="desc header">Melee Weapons</div>
+            <div class="usage header">Usage</div>
+            <div class="level header">Lvl</div>
+            <div class="parry header">Parry</div>
+            <div class="block header">Block</div>
+            <div class="damage header">Damage</div>
+            <div class="reach header">Reach</div>
+            <div class="st header">ST</div>
+            <div></div>
+
+            
+            <div class="desc">&#1044;&#1099;&#1084;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">Area</div>
+            <div class="level">0</div>
+            <div class="parry">No</div>
+            <div class="block"></div>
+            <div class="damage">Cough/Weep</div>
+            <div class="reach">Special</div>
+            <div class="st"></div>
+            <div></div>
+            
+            <div class="desc">&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1044;&#1088;&#1086;&#1073;&#1103;&#1097;&#1077;&#1077; ( &#1056;&#1086;&#1075;&#1072;)
+                <div class="list_note"></div>
+            </div>
+            <div class="usage"></div>
+            <div class="level">14</div>
+            <div class="parry">10</div>
+            <div class="block">No</div>
+            <div class="damage">1d+1 cr</div>
+            <div class="reach">C</div>
+            <div class="st"></div>
+            <div></div>
+            
+            <div class="desc">&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1056;&#1077;&#1078;&#1091;&#1097;&#1077;&#1077; ( &#1054;&#1073;&#1083;&#1086;&#1084;&#1086;&#1082; &#1088;&#1086;&#1075;&#1072;)
+                <div class="list_note"></div>
+            </div>
+            <div class="usage"></div>
+            <div class="level">14</div>
+            <div class="parry">10</div>
+            <div class="block">No</div>
+            <div class="damage">1d+1 cut</div>
+            <div class="reach">C</div>
+            <div class="st"></div>
+            <div></div>
+            
+            <div class="desc">&#1052;&#1077;&#1095; &quot;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&quot;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">&#1058;&#1099;&#1095;&#1086;&#1082;</div>
+            <div class="level">16</div>
+            <div class="parry">11</div>
+            <div class="block">No</div>
+            <div class="damage">1d+3 imp</div>
+            <div class="reach">2</div>
+            <div class="st">12&#8224;</div>
+            <div></div>
+            
+            <div class="desc">&#1052;&#1077;&#1095; &quot;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&quot;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">&#1059;&#1076;&#1072;&#1088;</div>
+            <div class="level">16</div>
+            <div class="parry">11</div>
+            <div class="block">No</div>
+            <div class="damage">1d+6 cut</div>
+            <div class="reach">1,2</div>
+            <div class="st">12&#8224;</div>
+            <div></div>
+            
+            <div class="desc">&#1055;&#1088;&#1080;&#1088;&#1086;&#1076;&#1085;&#1086;&#1077;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">&#1055;&#1080;&#1085;&#1086;&#1082;</div>
+            <div class="level">8</div>
+            <div class="parry">No</div>
+            <div class="block"></div>
+            <div class="damage">1d-1 cr</div>
+            <div class="reach">C,1</div>
+            <div class="st"></div>
+            <div></div>
+            
+            <div class="desc">&#1055;&#1088;&#1080;&#1088;&#1086;&#1076;&#1085;&#1086;&#1077;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">&#1055;&#1080;&#1085;&#1086;&#1082; (&#1073;&#1086;&#1090;&#1080;&#1085;&#1082;&#1086;&#1084;)</div>
+            <div class="level">8</div>
+            <div class="parry">No</div>
+            <div class="block"></div>
+            <div class="damage">1d cr</div>
+            <div class="reach">C,1</div>
+            <div class="st"></div>
+            <div></div>
+            
+            <div class="desc">&#1055;&#1088;&#1080;&#1088;&#1086;&#1076;&#1085;&#1086;&#1077;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">&#1059;&#1076;&#1072;&#1088;</div>
+            <div class="level">10</div>
+            <div class="parry">8</div>
+            <div class="block"></div>
+            <div class="damage">1d-2 cr</div>
+            <div class="reach">C</div>
+            <div class="st"></div>
+            <div></div>
+            
+            <div class="desc">&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; &#1086;&#1075;&#1086;&#1085;&#1100;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">Area</div>
+            <div class="level">0</div>
+            <div class="parry">No</div>
+            <div class="block"></div>
+            <div class="damage">1d-1 burn</div>
+            <div class="reach">Special</div>
+            <div class="st"></div>
+            <div></div>
+            
+        </div>
+        <div id="ranged">
+            <div class="desc header">Ranged Weapons</div>
+            <div class="usage header">Usage</div>
+            <div class="level header">Lvl</div>
+            <div class="acc header">Acc</div>
+            <div class="damage header">Damage</div>
+            <div class="range header">Range</div>
+            <div class="rof header">RoF</div>
+            <div class="shots header">Shots</div>
+            <div class="bulk header">Bulk</div>
+            <div class="rcl header">Rcl</div>
+            <div class="st header">ST</div>
+
+            
+            <div class="desc">&#1052;&#1077;&#1095; &quot;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&quot;
+                <div class="list_note"></div>
+            </div>
+            <div class="usage">&#1057;&#1085;&#1072;&#1088;&#1103;&#1076; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;</div>
+            <div class="level">16</div>
+            <div class="acc">2</div>
+            <div class="damage">1d-1 imp/per point</div>
+            <div class="range">75/150</div>
+            <div class="rof">1</div>
+            <div class="shots">No</div>
+            <div class="bulk">No</div>
+            <div class="rcl">No</div>
+            <div class="st">No</div>
+            
+        </div>
+        <div id="advantages">
+            <div class="desc header">Advantages, Disadvantages, Perks &amp; Quirks</div>
+            <div class="pts header">Pts</div>
+            <div class="ref header">Ref</div>
+
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1088;&#1077;&#1080;&#1084;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1072;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">67</div>
+            <div class="ref satisfiedY"></div>
+            
+            <div class="desc indent1 satisfiedY">&#1071;&#1079;&#1099;&#1082;: &#1054;&#1073;&#1097;&#1080;&#1081;, &#1080;&#1085;&#1092;&#1077;&#1088;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">0</div>
+            <div class="ref satisfiedY">B24</div>
+            
+            <div class="desc indent1 satisfiedY">&#1059;&#1089;&#1090;&#1086;&#1081;&#1095;&#1080;&#1074;&#1086;&#1089;&#1090;&#1100; &#1082; &#1090;&#1077;&#1084;&#1087;&#1077;&#1088;&#1072;&#1090;&#1091;&#1088;&#1077; 5
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">5</div>
+            <div class="ref satisfiedY">B93</div>
+            
+            <div class="desc indent1 satisfiedY">&#1058;&#1072;&#1083;&#1072;&#1085;&#1090; ( &#1041;&#1086;&#1081;&#1082;&#1086; ) 4
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">20</div>
+            <div class="ref satisfiedY">B89</div>
+            
+            <div class="desc indent1 satisfiedY">&#1052;&#1072;&#1075;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1100; 2
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">25</div>
+            <div class="ref satisfiedY">B66</div>
+            
+            <div class="desc indent1 satisfiedY">&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1056;&#1077;&#1078;&#1091;&#1097;&#1077;&#1077; ( &#1054;&#1073;&#1083;&#1086;&#1084;&#1086;&#1082; &#1088;&#1086;&#1075;&#1072;)
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">7</div>
+            <div class="ref satisfiedY">B88</div>
+            
+            <div class="desc indent1 satisfiedY">&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;, &#1044;&#1088;&#1086;&#1073;&#1103;&#1097;&#1077;&#1077; ( &#1056;&#1086;&#1075;&#1072;)
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">5</div>
+            <div class="ref satisfiedY">B88</div>
+            
+            <div class="desc indent1 satisfiedY">&#1041;&#1077;&#1089;&#1089;&#1090;&#1088;&#1072;&#1096;&#1080;&#1077; 1
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B55</div>
+            
+            <div class="desc indent1 satisfiedY">&#1040;&#1076;&#1072;&#1087;&#1090;&#1072;&#1094;&#1080;&#1103; &#1082; &#1090;&#1077;&#1084;&#1085;&#1086;&#1090;&#1077; 3
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">3</div>
+            <div class="ref satisfiedY">B71</div>
+            
+            <div class="desc indent0 satisfiedY">&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1082;&#1080;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">-80</div>
+            <div class="ref satisfiedY"></div>
+            
+            <div class="desc indent1 satisfiedY">&#1060;&#1080;&#1083;&#1072;&#1085;&#1090;&#1088;&#1086;&#1087;&#1080;&#1103;
+                <div class="list_note satisfiedY">&#1057;&#1050;: 12 (&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1095;&#1085;&#1086; &#1095;&#1072;&#1089;&#1090;&#1086;).</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">-15</div>
+            <div class="ref satisfiedY">B125</div>
+            
+            <div class="desc indent1 satisfiedY">&#1054;&#1089;&#1086;&#1073;&#1099;&#1077; &#1087;&#1088;&#1080;&#1084;&#1077;&#1090;&#1099;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY">&#1064;&#1088;&#1072;&#1084; &#1085;&#1072; &#1083;&#1080;&#1094;&#1077;</div>
+            </div>
+            <div class="pts satisfiedY">-1</div>
+            <div class="ref satisfiedY">B165</div>
+            
+            <div class="desc indent1 satisfiedY">&#1054;&#1076;&#1085;&#1086;&#1075;&#1083;&#1072;&#1079;&#1099;&#1081;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY">-3 &#1082; &#1076;&#1080;&#1089;&#1090;&#1072;&#1085;&#1094;&#1080;&#1086;&#1085;&#1085;&#1086;&#1081; &#1072;&#1090;&#1072;&#1082;&#1077; &#1073;&#1077;&#1079; &#1087;&#1088;&#1080;&#1094;&#1077;&#1083;&#1080;&#1074;&#1072;&#1085;&#1080;&#1103;</div>
+            </div>
+            <div class="pts satisfiedY">-15</div>
+            <div class="ref satisfiedY">B147</div>
+            
+            <div class="desc indent1 satisfiedY">&#1047;&#1072;&#1082;&#1086;&#1085;&#1086;&#1087;&#1086;&#1089;&#1083;&#1091;&#1096;&#1085;&#1099;&#1081;
+                <div class="list_note satisfiedY">&#1057;&#1050;: 12 (&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1086;&#1095;&#1085;&#1086; &#1095;&#1072;&#1089;&#1090;&#1086;).</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">-10</div>
+            <div class="ref satisfiedY">B138</div>
+            
+            <div class="desc indent1 satisfiedY">&#1047;&#1072;&#1073;&#1083;&#1091;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"> &#1050;&#1088;&#1091;&#1075;&#1086;&#1084; &#1078;&#1091;&#1083;&#1100;&#1105;</div>
+            </div>
+            <div class="pts satisfiedY">-1</div>
+            <div class="ref satisfiedY">B164</div>
+            
+            <div class="desc indent1 satisfiedY">&#1042;&#1088;&#1072;&#1075;&#1080; ( &#1048;&#1085;&#1092;&#1077;&#1088;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081; &#1082;&#1091;&#1083;&#1100;&#1090;)
+                <div class="list_note satisfiedY">&#1041;&#1086;&#1083;&#1100;&#1096;&#1072;&#1103; &#1075;&#1088;&#1091;&#1087;&#1087;&#1072; &#1084;&#1077;&#1085;&#1077;&#1077; &#1089;&#1080;&#1083;&#1100;&#1085;&#1099;&#1093; &#1083;&#1102;&#1076;&#1077;&#1081; (&#1086;&#1090; 21 &#1076;&#1086; 1,000 &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;) &#1080;&#1083;&#1080; &#1085;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1089;&#1074;&#1077;&#1088;&#1093;&#1083;&#1102;&#1076;&#1077;&#1081;, -30.</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">-30</div>
+            <div class="ref satisfiedY">B135</div>
+            
+            <div class="desc indent1 satisfiedY">&#1042;&#1085;&#1077;&#1096;&#1085;&#1086;&#1089;&#1090;&#1100;
+                <div class="list_note satisfiedY">&#1059;&#1088;&#1086;&#1076;&#1083;&#1080;&#1074;&#1072;&#1103;, -8.</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="pts satisfiedY">-8</div>
+            <div class="ref satisfiedY">B21</div>
+            
+        </div>
+        <div id="skills">
+            <div class="desc header">Skills</div>
+            <div class="sl header">SL</div>
+            <div class="rsl header">RSL</div>
+            <div class="pts header">Pts</div>
+            <div class="ref header">Ref</div>
+
+            
+            <div class="desc indent0 satisfiedY">&#1041;&#1086;&#1081;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY"></div>
+            <div class="rsl satisfiedY"></div>
+            <div class="pts satisfiedY">19</div>
+            <div class="ref satisfiedY"></div>
+            
+            <div class="desc indent1 satisfiedY">&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">15</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+5</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B186</div>
+            
+            <div class="desc indent1 satisfiedY">&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">16</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+6</div>
+            <div class="pts satisfiedY">8</div>
+            <div class="ref satisfiedY">B209</div>
+            
+            <div class="desc indent1 satisfiedY">&#1044;&#1088;&#1072;&#1082;&#1072;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">14</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+4</div>
+            <div class="pts satisfiedY">1</div>
+            <div class="ref satisfiedY">B182</div>
+            
+            <div class="desc indent1 satisfiedY">&#1050;&#1086;&#1087;&#1100;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">14</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+4</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B208</div>
+            
+            <div class="desc indent1 satisfiedY">&#1050;&#1088;&#1091;&#1075;&#1086;&#1074;&#1072;&#1103; &#1072;&#1090;&#1072;&#1082;&#1072;* (&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;)
+                <div class="list_note satisfiedY">&#1055;&#1086; &#1091;&#1084;&#1086;&#1083;&#1095;&#1072;&#1085;&#1080;&#1102;: &#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095; - 5</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">16</div>
+            <div class="rsl satisfiedY">-4</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B232,MA89</div>
+            
+            <div class="desc indent1 satisfiedY">&#1051;&#1091;&#1082;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">14</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+4</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B182</div>
+            
+            <div class="desc indent1 satisfiedY">&#1052;&#1077;&#1090;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077; (&#1050;&#1086;&#1087;&#1100;&#1077;)
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B226</div>
+            
+            <div class="desc indent0 satisfiedY">&#1042;&#1077;&#1088;&#1093;&#1086;&#1074;&#1072;&#1103; &#1077;&#1079;&#1076;&#1072; (&#1051;&#1086;&#1096;&#1072;&#1076;&#1100;)
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B217</div>
+            
+            <div class="desc indent0 satisfiedY">&#1042;&#1088;&#1072;&#1095;&#1077;&#1073;&#1085;&#1086;&#1077; &#1076;&#1077;&#1083;&#1086;/TL4
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+0</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B213</div>
+            
+            <div class="desc indent0 satisfiedY">&#1043;&#1077;&#1088;&#1072;&#1083;&#1100;&#1076;&#1080;&#1082;&#1072;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B199</div>
+            
+            <div class="desc indent0 satisfiedY">&#1047;&#1072;&#1075;&#1086;&#1074;&#1072;&#1088;&#1080;&#1074;&#1072;&#1085;&#1080;&#1077; &#1079;&#1091;&#1073;&#1086;&#1074;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B195</div>
+            
+            <div class="desc indent0 satisfiedY">&#1050;&#1091;&#1079;&#1085;&#1077;&#1094;/TL4 (&#1046;&#1077;&#1083;&#1077;&#1079;&#1086;)
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">13</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+2</div>
+            <div class="pts satisfiedY">8</div>
+            <div class="ref satisfiedY">B221</div>
+            
+            <div class="desc indent0 satisfiedY">&#1051;&#1072;&#1079;&#1072;&#1085;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">10</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B183</div>
+            
+            <div class="desc indent0 satisfiedY">&#1051;&#1086;&#1074;&#1091;&#1096;&#1082;&#1080;/TL4
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B226</div>
+            
+            <div class="desc indent0 satisfiedY">&#1052;&#1077;&#1090;&#1072;&#1083;&#1083;&#1091;&#1088;&#1075;&#1080;&#1103;/TL4
+                <div class="list_note satisfiedY">&#1055;&#1086; &#1091;&#1084;&#1086;&#1083;&#1095;&#1072;&#1085;&#1080;&#1102;: &#1050;&#1091;&#1079;&#1085;&#1077;&#1094;/TL4 (&#1046;&#1077;&#1083;&#1077;&#1079;&#1086;) - 8</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">8</div>
+            <div class="ref satisfiedY">B209</div>
+            
+            <div class="desc indent0 satisfiedY">&#1054;&#1073;&#1099;&#1089;&#1082;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1042;&#1086;&#1089;&#1087;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B219</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1077;&#1088;&#1074;&#1072;&#1103; &#1087;&#1086;&#1084;&#1086;&#1097;&#1100;/TL4
+                <div class="list_note satisfiedY">&#1055;&#1086; &#1091;&#1084;&#1086;&#1083;&#1095;&#1072;&#1085;&#1080;&#1102;: &#1042;&#1088;&#1072;&#1095;&#1077;&#1073;&#1085;&#1086;&#1077; &#1076;&#1077;&#1083;&#1086;/TL4</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">13</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+2</div>
+            <div class="pts satisfiedY">1</div>
+            <div class="ref satisfiedY">B195</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1083;&#1072;&#1074;&#1072;&#1085;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">10</div>
+            <div class="rsl satisfiedY">&#1047;&#1044;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B224</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1088;&#1099;&#1078;&#1082;&#1080;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1051;&#1042;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">B203</div>
+            
+            <div class="desc indent0 satisfiedY">&#1059;&#1073;&#1077;&#1078;&#1076;&#1077;&#1085;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1042;&#1086;&#1083;&#1103;+1</div>
+            <div class="pts satisfiedY">8</div>
+            <div class="ref satisfiedY">B191</div>
+            
+            <div class="desc indent0 satisfiedY">&#1062;&#1077;&#1087;&#1083;&#1103;&#1085;&#1080;&#1077; &#1079;&#1072; &#1074;&#1099;&#1089;&#1090;&#1091;&#1087;&#1099; (&#1051;&#1072;&#1079;&#1072;&#1085;&#1080;&#1077;)
+                <div class="list_note satisfiedY">&#1055;&#1086; &#1091;&#1084;&#1086;&#1083;&#1095;&#1072;&#1085;&#1080;&#1102;: &#1051;&#1072;&#1079;&#1072;&#1085;&#1080;&#1077; - 3</div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="sl satisfiedY">10</div>
+            <div class="rsl satisfiedY">+0</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">B233</div>
+            
+        </div>
+        <div id="spells">
+            <div class="desc header">Spells</div>
+            <div class="cls header">Class</div>
+            <div class="college header">College</div>
+            <div class="mana header">Cost</div>
+            <div class="mana_maintain header">Maintain</div>
+            <div class="time header">Time</div>
+            <div class="duration header">Duration</div>
+            <div class="sl header">SL</div>
+            <div class="rsl header">RSL</div>
+            <div class="pts header">Pts</div>
+            <div class="ref header">Ref</div>
+
+            
+            <div class="desc indent0 satisfiedY">&#1042;&#1086;&#1089;&#1087;&#1083;&#1072;&#1084;&#1077;&#1085;&#1077;&#1085;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">1-4</div>
+            <div class="mana_maintain satisfiedY">Same</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">1 sec</div>
+            <div class="sl satisfiedY">13</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+2</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">M72</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1086;&#1075;&#1072;&#1089;&#1080;&#1090;&#1100; &#1086;&#1075;&#1086;&#1085;&#1100;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">3</div>
+            <div class="mana_maintain satisfiedY">-</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">Permanent</div>
+            <div class="sl satisfiedY">13</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+2</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">M72</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1086;&#1095;&#1091;&#1103;&#1090;&#1100; &#1078;&#1080;&#1079;&#1085;&#1100;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Info/Area</div>
+            <div class="college satisfiedY">&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1103; &#1080; &#1087;&#1086;&#1085;&#1080;&#1084;&#1072;&#1085;&#1080;&#1103;</div>
+            <div class="mana satisfiedY">1/2</div>
+            <div class="mana_maintain satisfiedY">-</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">Instant</div>
+            <div class="sl satisfiedY">13</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+2</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">M45</div>
+            
+            <div class="desc indent0 satisfiedY">&#1041;&#1086;&#1083;&#1100;&#1096;&#1086;&#1077; &#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;</div>
+            <div class="mana satisfiedY">1-4</div>
+            <div class="mana_maintain satisfiedY">-</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">Permanent</div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">4</div>
+            <div class="ref satisfiedY">M91</div>
+            
+            <div class="desc indent0 satisfiedY">&#1052;&#1072;&#1083;&#1086;&#1077; &#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;</div>
+            <div class="mana satisfiedY">1-3</div>
+            <div class="mana_maintain satisfiedY">-</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">Permanent</div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">M91</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1077;&#1088;&#1077;&#1076;&#1072;&#1090;&#1100; &#1079;&#1076;&#1086;&#1088;&#1086;&#1074;&#1100;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;</div>
+            <div class="mana satisfiedY">1/pt</div>
+            <div class="mana_maintain satisfiedY">-</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">1 hour</div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">M89</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1077;&#1088;&#1077;&#1076;&#1072;&#1090;&#1100; &#1101;&#1085;&#1077;&#1088;&#1075;&#1080;&#1102;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;</div>
+            <div class="mana satisfiedY">1/pt</div>
+            <div class="mana_maintain satisfiedY">-</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">Permanent</div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">M89</div>
+            
+            <div class="desc indent0 satisfiedY">&#1055;&#1099;&#1083;&#1072;&#1102;&#1097;&#1077;&#1077; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY">+2 &#1073;&#1072;&#1083;&#1083;&#1072; &#1091;&#1088;&#1086;&#1085; &#1086;&#1090; &#1072;&#1090;&#1072;&#1082;&#1080; &#1089; &#1086;&#1088;&#1091;&#1078;&#1080;&#1077;&#1084; &#1073;&#1083;&#1080;&#1078;&#1085;&#1077;&#1075;&#1086; &#1073;&#1086;&#1103;</div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">4</div>
+            <div class="mana_maintain satisfiedY">1</div>
+            <div class="time satisfiedY">2 sec</div>
+            <div class="duration satisfiedY">1 min</div>
+            <div class="sl satisfiedY">12</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+1</div>
+            <div class="pts satisfiedY">2</div>
+            <div class="ref satisfiedY">M75</div>
+            
+            <div class="desc indent0 satisfiedY">&#1044;&#1099;&#1084;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Area</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">1</div>
+            <div class="mana_maintain satisfiedY">Half</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">5 min #</div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+0</div>
+            <div class="pts satisfiedY">1</div>
+            <div class="ref satisfiedY">M73</div>
+            
+            <div class="desc indent0 satisfiedY">&#1053;&#1072;&#1075;&#1088;&#1077;&#1090;&#1100;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Regular</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">Varies</div>
+            <div class="mana_maintain satisfiedY">Varies</div>
+            <div class="time satisfiedY">1 min</div>
+            <div class="duration satisfiedY">1 min</div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+0</div>
+            <div class="pts satisfiedY">1</div>
+            <div class="ref satisfiedY">M74</div>
+            
+            <div class="desc indent0 satisfiedY">&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; &#1086;&#1075;&#1086;&#1085;&#1100;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Area</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">2</div>
+            <div class="mana_maintain satisfiedY">Half</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">1 min</div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+0</div>
+            <div class="pts satisfiedY">1</div>
+            <div class="ref satisfiedY">M72</div>
+            
+            <div class="desc indent0 satisfiedY">&#1060;&#1086;&#1088;&#1084;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100; &#1086;&#1075;&#1086;&#1085;&#1100;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cls satisfiedY">Area</div>
+            <div class="college satisfiedY">&#1086;&#1075;&#1086;&#1085;&#1100;</div>
+            <div class="mana satisfiedY">2</div>
+            <div class="mana_maintain satisfiedY">Half</div>
+            <div class="time satisfiedY">1 sec</div>
+            <div class="duration satisfiedY">1 min</div>
+            <div class="sl satisfiedY">11</div>
+            <div class="rsl satisfiedY">&#1048;&#1053;+0</div>
+            <div class="pts satisfiedY">1</div>
+            <div class="ref satisfiedY">M72</div>
+            
+        </div>
+        <div id="equipment">
+            <div class="equipped header">◈</div>
+            <div class="qty header">Qty</div>
+            <div class="desc header">Equipment (27 kg; $1,515)</div>
+            <div class="cost header">$</div>
+            <div class="weight header">lbs</div>
+            <div class="sum_cost header">∑ $</div>
+            <div class="sum_weight header">∑ lbs</div>
+            <div class="ref header">Ref</div>
+            <div></div>
+
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1054;&#1073;&#1089;&#1080;&#1076;&#1080;&#1072;&#1085;&#1086;&#1074;&#1072;&#1103; &#1084;&#1072;&#1089;&#1082;&#1072; (6/60)
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY">&#1040;&#1082;&#1089;&#1077;&#1089;&#1089;&#1091;&#1072;&#1088; &#1087;&#1080;&#1090;&#1072;&#1077;&#1090; &#1090;&#1077;&#1083;&#1086; &#1089;&#1074;&#1086;&#1077;&#1075;&#1086; &#1085;&#1086;&#1089;&#1080;&#1090;&#1077;&#1083;&#1103;, &#1087;&#1086;&#1089;&#1083;&#1077; &#1085;&#1072;&#1076;&#1077;&#1074;&#1072;&#1085;&#1080;&#1103; &#1085;&#1072;&#1089;&#1099;&#1097;&#1072;&#1077;&#1090; &#1086;&#1088;&#1075;&#1072;&#1085;&#1080;&#1079;&#1084; &#1080; &#1076;&#1077;&#1083;&#1072;&#1077;&#1090; &#1077;&#1075;&#1086; &#1087;&#1086;&#1083;&#1085;&#1086;&#1089;&#1090;&#1100;&#1102; &#1074;&#1099;&#1089;&#1087;&#1072;&#1074;&#1096;&#1080;&#1084;&#1089;&#1103;, &#1072; &#1090;&#1072;&#1082;&#1078;&#1077; &#1076;&#1072;&#1077;&#1090; +1 &#1082;&#1086; &#1074;&#1089;&#1077;&#1084; &#1073;&#1088;&#1086;&#1089;&#1082;&#1072;&#1084; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; &#1095;&#1072;&#1089;&#1072; &#1080;&#1083;&#1080; &#1087;&#1086;&#1082;&#1072; &#1084;&#1072;&#1089;&#1082;&#1072; &#1085;&#1077; &#1073;&#1091;&#1076;&#1077;&#1090; &#1089;&#1085;&#1103;&#1090;&#1072;. &#1069;&#1090;&#1080; &#1087;&#1088;&#1077;&#1080;&#1084;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1072; &#1084;&#1086;&#1078;&#1085;&#1086; &#1087;&#1086;&#1083;&#1091;&#1095;&#1080;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1076;&#1080;&#1085; &#1088;&#1072;&#1079; &#1074; &#1076;&#1077;&#1085;&#1100;. &#1050;&#1072;&#1078;&#1076;&#1099;&#1081; &#1088;&#1072;&#1079;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1085;&#1072;&#1076;&#1077;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103; &#1084;&#1072;&#1089;&#1082;&#1072;, &#1101;&#1092;&#1092;&#1077;&#1082;&#1090; &#1076;&#1083;&#1080;&#1090;&#1089;&#1103; &#1085;&#1072; &#1086;&#1076;&#1085;&#1091; &#1084;&#1080;&#1085;&#1091;&#1090;&#1091; &#1084;&#1077;&#1085;&#1100;&#1096;&#1077;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1084;&#1072;&#1089;&#1082;&#1072; &#1085;&#1072;&#1076;&#1077;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103; 60-&#1081; &#1088;&#1072;&#1079;, &#1086;&#1085;&#1072; &#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1080;&#1090;&#1089;&#1103; &#1073;&#1077;&#1089;&#1087;&#1086;&#1083;&#1077;&#1079;&#1085;&#1086;&#1081;. &#1054;&#1076;&#1085;&#1072;&#1082;&#1086; &#1082; &#1101;&#1090;&#1086;&#1084;&#1091; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1077;&#1094; &#1089;&#1074;&#1099;&#1082;&#1085;&#1077;&#1090;&#1089;&#1103; &#1089; &#1085;&#1077;&#1081;, &#1080; &#1077;&#1084;&#1091; &#1085;&#1091;&#1078;&#1085;&#1086; &#1073;&#1091;&#1076;&#1077;&#1090; &#1085;&#1072;&#1076;&#1077;&#1074;&#1072;&#1090;&#1100; &#1077;&#1105; &#1093;&#1086;&#1090;&#1103; &#1073;&#1099; &#1088;&#1072;&#1079; &#1074; &#1076;&#1077;&#1085;&#1100;, &#1090;&#1072;&#1082; &#1078;&#1077; &#1084;&#1072;&#1089;&#1082;&#1072; &#1084;&#1077;&#1085;&#1103;&#1077;&#1090; &#1084;&#1080;&#1088;&#1086;&#1074;&#1086;&#1079;&#1079;&#1088;&#1077;&#1085;&#1080;&#1077; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1100;&#1094;&#1072;, &#1086;&#1085;&#1086; &#1087;&#1086;&#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1085;&#1086; &#1080;&#1079;&#1084;&#1077;&#1085;&#1080;&#1090;&#1089;&#1103; &#1085;&#1072; &#1085;&#1077;&#1081;&#1090;&#1088;&#1072;&#1083;&#1100;&#1085;&#1086;-&#1079;&#1083;&#1086;&#1077;, &#1080; &#1086;&#1085; &#1074;&#1089;&#1105; &#1073;&#1086;&#1083;&#1100;&#1096;&#1077; &#1073;&#1091;&#1076;&#1077;&#1090; &#1086;&#1076;&#1077;&#1088;&#1078;&#1080;&#1084; &#1073;&#1086;&#1075;&#1080;&#1085;&#1077;&#1081; &#1064;&#1072;&#1088;, &#1087;&#1086;&#1082;&#1072; &#1085;&#1077; &#1089;&#1090;&#1072;&#1085;&#1077;&#1090; &#1074;&#1077;&#1088;&#1085;&#1099;&#1084; &#1077;&#1105; &#1087;&#1086;&#1089;&#1083;&#1077;&#1076;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1077;&#1084;. </div>
+            </div>
+            <div class="cost satisfiedY">0</div>
+            <div class="weight satisfiedY">0.5 kg</div>
+            <div class="sum_cost satisfiedY">0</div>
+            <div class="sum_weight satisfiedY">0.5 kg</div>
+            <div class="ref satisfiedY"></div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1052;&#1077;&#1095; &quot;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&quot;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cost satisfiedY">800</div>
+            <div class="weight satisfiedY">3.5 kg</div>
+            <div class="sum_cost satisfiedY">800</div>
+            <div class="sum_weight satisfiedY">3.5 kg</div>
+            <div class="ref satisfiedY">B274</div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1058;&#1103;&#1078;&#1077;&#1083;&#1099;&#1081; &#1079;&#1072;&#1082;&#1088;&#1099;&#1090;&#1099;&#1081; &#1096;&#1083;&#1077;&#1084;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cost satisfiedY">340</div>
+            <div class="weight satisfiedY">5 kg</div>
+            <div class="sum_cost satisfiedY">340</div>
+            <div class="sum_weight satisfiedY">5 kg</div>
+            <div class="ref satisfiedY">B284</div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1040;&#1087;&#1090;&#1077;&#1095;&#1082;&#1072;  &#1087;&#1077;&#1088;&#1074;&#1086;&#1081;  &#1087;&#1086;&#1084;&#1086;&#1097;&#1080;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY">&#1055;&#1086;&#1083;&#1085;&#1099;&#1081; &#1085;&#1072;&#1073;&#1086;&#1088; &#1076;&#1083;&#1103; &#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1103; &#1088;&#1072;&#1085;, &#1089; &#1087;&#1086;&#1074;&#1103;&#1079;&#1082;&#1072;&#1084;&#1080;, &#1084;&#1072;&#1079;&#1103;&#1084;&#1080; &#1080; &#1090;.&#1076;.</div>
+            </div>
+            <div class="cost satisfiedY">50</div>
+            <div class="weight satisfiedY">1 kg</div>
+            <div class="sum_cost satisfiedY">50</div>
+            <div class="sum_weight satisfiedY">1 kg</div>
+            <div class="ref satisfiedY">B289</div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1042;&#1077;&#1089;&#1099;  &#1080;  &#1075;&#1080;&#1088;&#1100;&#1082;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY">&#1044;&#1083;&#1103; &#1082;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1103; &#1074;&#1077;&#1089;&#1072;</div>
+            </div>
+            <div class="cost satisfiedY">35</div>
+            <div class="weight satisfiedY">1.5 kg</div>
+            <div class="sum_cost satisfiedY">35</div>
+            <div class="sum_weight satisfiedY">1.5 kg</div>
+            <div class="ref satisfiedY">B289</div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1050;&#1086;&#1078;&#1072;&#1085;&#1099;&#1077; &#1087;&#1077;&#1088;&#1095;&#1072;&#1090;&#1082;&#1080; 
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cost satisfiedY">30</div>
+            <div class="weight satisfiedY">0 kg</div>
+            <div class="sum_cost satisfiedY">30</div>
+            <div class="sum_weight satisfiedY">0 kg</div>
+            <div class="ref satisfiedY">B284</div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1081; &#1078;&#1080;&#1083;&#1077;&#1090; 
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cost satisfiedY">150</div>
+            <div class="weight satisfiedY">8 kg</div>
+            <div class="sum_cost satisfiedY">150</div>
+            <div class="sum_weight satisfiedY">8 kg</div>
+            <div class="ref satisfiedY">B283</div>
+            <div></div>
+            
+            <div class="equipped satisfiedY">Э</div>
+            <div class="qty satisfiedY">1</div>
+            <div class="desc indent0 satisfiedY">&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1077; &#1087;&#1086;&#1085;&#1086;&#1078;&#1080;
+                <div class="list_note satisfiedY"></div>
+                <div class="list_note satisfiedY"></div>
+            </div>
+            <div class="cost satisfiedY">110</div>
+            <div class="weight satisfiedY">7.5 kg</div>
+            <div class="sum_cost satisfiedY">110</div>
+            <div class="sum_weight satisfiedY">7.5 kg</div>
+            <div class="ref satisfiedY">B283</div>
+            <div></div>
+            
+        </div>
+        <div id="notes">
+            <div class="desc header">Notes</div>
+
+            
+            <div class="desc indent0">&#1052;&#1077;&#1095; &#8220;&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;&#8221; &#8211; &#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095; &#1089; &#1082;&#1083;&#1080;&#1085;&#1082;&#1086;&#1084; &#1090;&#1080;&#1087;&#1072; &#1092;&#1083;&#1072;&#1084;&#1073;&#1077;&#1088;&#1075; &#1089;&#1086; &#1089;&#1083;&#1077;&#1076;&#1072;&#1084;&#1080; &#1085;&#1077;&#1073;&#1086;&#1083;&#1100;&#1096;&#1086;&#1075;&#1086; &#1085;&#1072;&#1075;&#1072;&#1088;&#1072;, &#1086;&#1089;&#1090;&#1072;&#1074;&#1096;&#1077;&#1075;&#1086;&#1089;&#1103; &#1074; &#1089;&#1083;&#1077;&#1076;&#1089;&#1090;&#1074;&#1080;&#1080; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1085;&#1080;&#1103; &#1085;&#1072; &#1085;&#1077;&#1084; &#1084;&#1072;&#1075;&#1080;&#1080;. &#1056;&#1072;&#1085;&#1077;&#1077; &#1073;&#1099;&#1083; &#1086;&#1073;&#1099;&#1095;&#1085;&#1099;&#1084; &#1084;&#1077;&#1095;&#1086;&#1084;, &#1085;&#1086; &#1087;&#1086;&#1087;&#1072;&#1074; &#1074; &#1087;&#1086;&#1088;&#1090;&#1072;&#1083; &#1085;&#1077;&#1082;&#1088;&#1086;&#1084;&#1072;&#1085;&#1090;&#1072; &#1086;&#1073;&#1088;&#1077;&#1083; &#1084;&#1072;&#1075;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1089;&#1074;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072;. &#1055;&#1086; &#1078;&#1077;&#1083;&#1072;&#1085;&#1080;&#1102; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1100;&#1094;&#1072; &#1082;&#1083;&#1080;&#1085;&#1086;&#1082; &#1085;&#1072;&#1095;&#1080;&#1085;&#1072;&#1077;&#1090; &#1080;&#1079;&#1083;&#1091;&#1095;&#1072;&#1090;&#1100; &#1103;&#1088;&#1082;&#1080;&#1081; &#1089;&#1074;&#1077;&#1090;, &#1086;&#1089;&#1074;&#1077;&#1097;&#1072;&#1103; &#1087;&#1088;&#1086;&#1089;&#1090;&#1088;&#1072;&#1085;&#1089;&#1090;&#1074;&#1086; &#1074;&#1086;&#1082;&#1088;&#1091;&#1075; &#1089;&#1077;&#1073;&#1103;, &#1072; &#1090;&#1072;&#1082; &#1078;&#1077; &#1085;&#1072;&#1085;&#1086;&#1089;&#1080;&#1090; +1 &#1091;&#1088;&#1086;&#1085;&#1072; &#1074;&#1089;&#1077;&#1084; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1072;&#1084; &#1089; &#1091;&#1103;&#1079;&#1074;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;&#1102; &#1082; &#1089;&#1074;&#1077;&#1090;&#1091;. &#1042;&#1084;&#1077;&#1089;&#1090;&#1086; &#1072;&#1090;&#1072;&#1082;&#1080; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1077;&#1094; &#1084;&#1086;&#1078;&#1077;&#1090; &#1074;&#1099;&#1089;&#1090;&#1088;&#1077;&#1083;&#1080;&#1090;&#1100; &#1080;&#1079; &#1082;&#1086;&#1085;&#1095;&#1080;&#1082;&#1072; &#1084;&#1077;&#1095;&#1072; &#1089;&#1082;&#1086;&#1085;&#1094;&#1077;&#1085;&#1090;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1085;&#1099;&#1084; &#1083;&#1091;&#1095;&#1086;&#1084; &#1089;&#1074;&#1077;&#1090;&#1072;, &#1082;&#1072;&#1082; &#1077;&#1089;&#1083;&#1080; &#1073;&#1099; &#1101;&#1090;&#1086; &#1073;&#1099;&#1083;&#1086; &#1079;&#1072;&#1082;&#1083;&#1080;&#1085;&#1072;&#1085;&#1080;&#1077; &#1057;&#1086;&#1083;&#1085;&#1077;&#1095;&#1085;&#1099;&#1081; &#1089;&#1085;&#1072;&#1088;&#1103;&#1076; (M114).</div>
+            
+            <div class="desc indent0">&#1050;&#1088;&#1072;&#1084;&#1072;&#1088;&#1080;&#1097;&#1077; &#1083;&#1077;&#1078;&#1080;&#1090; &#1087;&#1086; URL: https://github.com/New1st/gcs-kramar-borde</div>
+            
+        </div>
+    </div>
+    <div id="footer">Copyright ©1998-2017 by Richard A. Wilkes • All rights reserved •
+        <a href="http://gurpscharactersheet.com">http://gurpscharactersheet.com</a>
+    </div>
+</body>
+
+</html>
