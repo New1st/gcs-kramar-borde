@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <character id="edbe0003-0d59-4924-99cc-833cb96e2fc1" version="3">
 	<created_date>2023 Dec 8</created_date>
-	<modified_date>2024 May 27 22:05</modified_date>
+	<modified_date>2024 Jun 1 16:22</modified_date>
 	<profile>
 		<player_name>newist</player_name>
 		<campaign>&#1059;&#1073;&#1083;&#1102;&#1076;&#1086;&#1095;&#1085;&#1072;&#1103;</campaign>
@@ -1394,7 +1394,7 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				</categories>
 			</advantage>
 		</advantage_container>
-		<advantage_container version="2" open="yes">
+		<advantage_container version="2" open="no">
 			<name>&#1053;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1090;&#1082;&#1080;</name>
 			<advantage version="2">
 				<name>&#1060;&#1080;&#1083;&#1072;&#1085;&#1090;&#1088;&#1086;&#1087;&#1080;&#1103;</name>
@@ -2356,214 +2356,381 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 		</spell>
 	</spell_list>
 	<equipment_list>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1054;&#1073;&#1089;&#1080;&#1076;&#1080;&#1072;&#1085;&#1086;&#1074;&#1072;&#1103; &#1084;&#1072;&#1089;&#1082;&#1072; (6/60)</description>
+		<equipment_container version="4" open="no" state="equipped">
+			<description>&#1040;&#1084;&#1091;&#1085;&#1080;&#1094;&#1080;&#1103;</description>
 			<legality_class>4</legality_class>
 			<value>0</value>
-			<weight>1 lb</weight>
-			<dr_bonus>
-				<location>face</location>
-				<amount>1</amount>
-			</dr_bonus>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1050;&#1086;&#1078;&#1072;&#1085;&#1099;&#1077; &#1087;&#1077;&#1088;&#1095;&#1072;&#1090;&#1082;&#1080; </description>
-			<tech_level>1</tech_level>
-			<legality_class>-</legality_class>
-			<value>30</value>
-			<reference>B284</reference>
-			<categories>
-				<category>Gloves</category>
-			</categories>
-			<dr_bonus>
-				<location>hands</location>
-				<amount>2</amount>
-			</dr_bonus>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1042;&#1077;&#1089;&#1099;  &#1080;  &#1075;&#1080;&#1088;&#1100;&#1082;</description>
-			<tech_level>1</tech_level>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1050;&#1086;&#1078;&#1072;&#1085;&#1072;&#1103; &#1082;&#1091;&#1088;&#1090;&#1082;&#1072; </description>
+				<tech_level>1</tech_level>
+				<legality_class>-</legality_class>
+				<value>50</value>
+				<weight>4 lb</weight>
+				<reference>B283</reference>
+				<categories>
+					<category>Body Armor</category>
+				</categories>
+				<dr_bonus>
+					<location>torso</location>
+					<amount>1</amount>
+				</dr_bonus>
+				<dr_bonus>
+					<location>arms</location>
+					<amount>1</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1050;&#1086;&#1078;&#1072;&#1085;&#1099;&#1077; &#1087;&#1077;&#1088;&#1095;&#1072;&#1090;&#1082;&#1080; </description>
+				<tech_level>1</tech_level>
+				<legality_class>-</legality_class>
+				<value>30</value>
+				<reference>B284</reference>
+				<categories>
+					<category>Gloves</category>
+				</categories>
+				<dr_bonus>
+					<location>hands</location>
+					<amount>2</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1050;&#1086;&#1078;&#1072;&#1085;&#1099;&#1077; &#1096;&#1090;&#1072;&#1085;&#1099; </description>
+				<tech_level>1</tech_level>
+				<legality_class>-</legality_class>
+				<value>40</value>
+				<weight>3 lb</weight>
+				<reference>B283</reference>
+				<categories>
+					<category>Limb Armor</category>
+				</categories>
+				<dr_bonus>
+					<location>groin</location>
+					<amount>1</amount>
+				</dr_bonus>
+				<dr_bonus>
+					<location>legs</location>
+					<amount>1</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1077; &#1087;&#1086;&#1085;&#1086;&#1078;&#1080;</description>
+				<tech_level>2</tech_level>
+				<legality_class>3</legality_class>
+				<value>110</value>
+				<weight>15 lb</weight>
+				<reference>B283</reference>
+				<categories>
+					<category>Limb Armor</category>
+				</categories>
+				<dr_bonus>
+					<location>legs</location>
+					<amount>4</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1081; &#1078;&#1080;&#1083;&#1077;&#1090; </description>
+				<tech_level>2</tech_level>
+				<legality_class>4</legality_class>
+				<value>150</value>
+				<weight>16 lb</weight>
+				<reference>B283</reference>
+				<categories>
+					<category>Body Armor</category>
+				</categories>
+				<dr_bonus>
+					<location>torso</location>
+					<amount>4</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1051;&#1072;&#1090;&#1085;&#1099;&#1077; &#1088;&#1091;&#1082;&#1072;&#1074;&#1080;&#1094;&#1099;</description>
+				<tech_level>2</tech_level>
+				<legality_class>4</legality_class>
+				<value>100</value>
+				<weight>2 lb</weight>
+				<reference>B284</reference>
+				<categories>
+					<category>Gloves</category>
+				</categories>
+				<dr_bonus>
+					<location>hands</location>
+					<amount>4</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1057;&#1086;&#1083;&#1083;&#1077;&#1088;&#1077;&#1090;&#1099;  </description>
+				<tech_level>3</tech_level>
+				<legality_class>3</legality_class>
+				<value>150</value>
+				<weight>7 lb</weight>
+				<reference>B284</reference>
+				<categories>
+					<category>Footwear</category>
+				</categories>
+				<dr_bonus>
+					<location>feet</location>
+					<amount>4</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1058;&#1103;&#1078;&#1077;&#1083;&#1099;&#1081; &#1079;&#1072;&#1082;&#1088;&#1099;&#1090;&#1099;&#1081; &#1096;&#1083;&#1077;&#1084;</description>
+				<tech_level>3</tech_level>
+				<legality_class>3</legality_class>
+				<value>340</value>
+				<weight>10 lb</weight>
+				<reference>B284</reference>
+				<categories>
+					<category>Headgear</category>
+				</categories>
+				<dr_bonus>
+					<location>neck</location>
+					<amount>7</amount>
+				</dr_bonus>
+				<dr_bonus>
+					<location>face</location>
+					<amount>7</amount>
+				</dr_bonus>
+				<dr_bonus>
+					<location>skull</location>
+					<amount>7</amount>
+				</dr_bonus>
+			</equipment>
+		</equipment_container>
+		<equipment_container version="4" open="no" state="equipped">
+			<description>&#1055;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;&#1099;</description>
 			<legality_class>4</legality_class>
-			<value>35</value>
-			<weight>3 lb</weight>
-			<reference>B289</reference>
-			<notes>&#1044;&#1083;&#1103; &#1082;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1103; &#1074;&#1077;&#1089;&#1072;</notes>
-			<categories>
-				<category>Tools</category>
-			</categories>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1040;&#1087;&#1090;&#1077;&#1095;&#1082;&#1072;  &#1087;&#1077;&#1088;&#1074;&#1086;&#1081;  &#1087;&#1086;&#1084;&#1086;&#1097;&#1080;</description>
+			<value>0</value>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1054;&#1073;&#1089;&#1080;&#1076;&#1080;&#1072;&#1085;&#1086;&#1074;&#1072;&#1103; &#1084;&#1072;&#1089;&#1082;&#1072; (6/60)</description>
+				<legality_class>4</legality_class>
+				<value>0</value>
+				<weight>1 lb</weight>
+				<dr_bonus>
+					<location>face</location>
+					<amount>1</amount>
+				</dr_bonus>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1042;&#1077;&#1089;&#1099;  &#1080;  &#1075;&#1080;&#1088;&#1100;&#1082;</description>
+				<tech_level>1</tech_level>
+				<legality_class>4</legality_class>
+				<value>35</value>
+				<weight>3 lb</weight>
+				<reference>B289</reference>
+				<notes>&#1044;&#1083;&#1103; &#1082;&#1086;&#1085;&#1090;&#1088;&#1086;&#1083;&#1103; &#1074;&#1077;&#1089;&#1072;</notes>
+				<categories>
+					<category>Tools</category>
+				</categories>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1040;&#1087;&#1090;&#1077;&#1095;&#1082;&#1072;  &#1087;&#1077;&#1088;&#1074;&#1086;&#1081;  &#1087;&#1086;&#1084;&#1086;&#1097;&#1080;</description>
+				<legality_class>4</legality_class>
+				<value>50</value>
+				<weight>2 lb</weight>
+				<reference>B289</reference>
+				<notes>&#1055;&#1086;&#1083;&#1085;&#1099;&#1081; &#1085;&#1072;&#1073;&#1086;&#1088; &#1076;&#1083;&#1103; &#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1103; &#1088;&#1072;&#1085;, &#1089; &#1087;&#1086;&#1074;&#1103;&#1079;&#1082;&#1072;&#1084;&#1080;, &#1084;&#1072;&#1079;&#1103;&#1084;&#1080; &#1080; &#1090;.&#1076;.</notes>
+				<categories>
+					<category>Medical Gear</category>
+				</categories>
+				<skill_bonus>
+					<name compare="is">&#1055;&#1077;&#1088;&#1074;&#1072;&#1103; &#1087;&#1086;&#1084;&#1086;&#1097;&#1100;</name>
+					<specialization compare="is anything"></specialization>
+					<amount>1</amount>
+				</skill_bonus>
+			</equipment>
+		</equipment_container>
+		<equipment_container version="4" open="no" state="equipped">
+			<description>&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</description>
 			<legality_class>4</legality_class>
-			<value>50</value>
-			<weight>2 lb</weight>
-			<reference>B289</reference>
-			<notes>&#1055;&#1086;&#1083;&#1085;&#1099;&#1081; &#1085;&#1072;&#1073;&#1086;&#1088; &#1076;&#1083;&#1103; &#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1103; &#1088;&#1072;&#1085;, &#1089; &#1087;&#1086;&#1074;&#1103;&#1079;&#1082;&#1072;&#1084;&#1080;, &#1084;&#1072;&#1079;&#1103;&#1084;&#1080; &#1080; &#1090;.&#1076;.</notes>
-			<categories>
-				<category>Medical Gear</category>
-			</categories>
-			<skill_bonus>
-				<name compare="is">&#1055;&#1077;&#1088;&#1074;&#1072;&#1103; &#1087;&#1086;&#1084;&#1086;&#1097;&#1100;</name>
-				<specialization compare="is anything"></specialization>
-				<amount>1</amount>
-			</skill_bonus>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1077; &#1087;&#1086;&#1085;&#1086;&#1078;&#1080;</description>
-			<tech_level>2</tech_level>
-			<legality_class>3</legality_class>
-			<value>110</value>
-			<weight>15 lb</weight>
-			<reference>B283</reference>
-			<categories>
-				<category>Limb Armor</category>
-			</categories>
-			<dr_bonus>
-				<location>legs</location>
-				<amount>4</amount>
-			</dr_bonus>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1050;&#1086;&#1083;&#1100;&#1095;&#1091;&#1078;&#1085;&#1099;&#1081; &#1078;&#1080;&#1083;&#1077;&#1090; </description>
-			<tech_level>2</tech_level>
-			<legality_class>4</legality_class>
-			<value>150</value>
-			<weight>16 lb</weight>
-			<reference>B283</reference>
-			<categories>
-				<category>Body Armor</category>
-			</categories>
-			<dr_bonus>
-				<location>torso</location>
-				<amount>4</amount>
-			</dr_bonus>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1058;&#1103;&#1078;&#1077;&#1083;&#1099;&#1081; &#1079;&#1072;&#1082;&#1088;&#1099;&#1090;&#1099;&#1081; &#1096;&#1083;&#1077;&#1084;</description>
-			<tech_level>3</tech_level>
-			<legality_class>3</legality_class>
-			<value>340</value>
-			<weight>10 lb</weight>
-			<reference>B284</reference>
-			<categories>
-				<category>Headgear</category>
-			</categories>
-			<dr_bonus>
-				<location>neck</location>
-				<amount>7</amount>
-			</dr_bonus>
-			<dr_bonus>
-				<location>face</location>
-				<amount>7</amount>
-			</dr_bonus>
-			<dr_bonus>
-				<location>skull</location>
-				<amount>7</amount>
-			</dr_bonus>
-		</equipment>
-		<equipment version="4" state="equipped">
-			<quantity>1</quantity>
-			<description>&#1052;&#1077;&#1095; "&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;"</description>
-			<tech_level>3</tech_level>
-			<legality_class>4</legality_class>
-			<value>800</value>
-			<weight>7 lb</weight>
-			<reference>B274</reference>
-			<melee_weapon>
-				<damage>sw+4 cut</damage>
-				<strength>12&#8224;</strength>
-				<usage>&#1059;&#1076;&#1072;&#1088;</usage>
-				<reach>1,2</reach>
-				<parry>0</parry>
-				<block>No</block>
-				<default>
-					<type>DX</type>
-					<modifier>-5</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1052;&#1077;&#1095;</name>
-					<modifier>0</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1055;&#1072;&#1083;&#1072;&#1096;  </name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1057;&#1080;&#1083;&#1086;&#1074;&#1086;&#1081; &#1084;&#1077;&#1095; </name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>Sword!</name>
-					<modifier>0</modifier>
-				</default>
-			</melee_weapon>
-			<melee_weapon>
-				<damage>thr+4 imp</damage>
-				<strength>12&#8224;</strength>
-				<usage>&#1058;&#1099;&#1095;&#1086;&#1082;</usage>
-				<reach>2</reach>
-				<parry>0</parry>
-				<block>No</block>
-				<default>
-					<type>DX</type>
-					<modifier>-5</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1052;&#1077;&#1095;</name>
-					<modifier>0</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1055;&#1072;&#1083;&#1072;&#1096;  </name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>&#1057;&#1080;&#1083;&#1086;&#1074;&#1086;&#1081; &#1084;&#1077;&#1095; </name>
-					<modifier>-4</modifier>
-				</default>
-				<default>
-					<type>Skill</type>
-					<name>Sword!</name>
-					<modifier>0</modifier>
-				</default>
-			</melee_weapon>
-			<ranged_weapon>
-				<damage>1d-1 imp/per point</damage>
-				<strength>No</strength>
-				<usage>&#1057;&#1085;&#1072;&#1088;&#1103;&#1076; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;</usage>
-				<accuracy>2</accuracy>
-				<range>75/150</range>
-				<rate_of_fire>1</rate_of_fire>
-				<shots>No</shots>
-				<bulk>No</bulk>
-				<recoil>No</recoil>
-				<default>
-					<type>Skill</type>
-					<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
-					<modifier>0</modifier>
-				</default>
-				<default>
-					<type>DX</type>
-					<modifier>-5</modifier>
-				</default>
-			</ranged_weapon>
-			<categories>
-				<category>Melee Weapon</category>
-			</categories>
-		</equipment>
+			<value>0</value>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1052;&#1077;&#1095; "&#1054;&#1075;&#1085;&#1077;&#1085;&#1085;&#1099;&#1081; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;"</description>
+				<tech_level>3</tech_level>
+				<legality_class>4</legality_class>
+				<value>800</value>
+				<weight>7 lb</weight>
+				<reference>B274</reference>
+				<melee_weapon>
+					<damage>sw+4 cut</damage>
+					<strength>12&#8224;</strength>
+					<usage>&#1059;&#1076;&#1072;&#1088;</usage>
+					<reach>1,2</reach>
+					<parry>0</parry>
+					<block>No</block>
+					<default>
+						<type>DX</type>
+						<modifier>-5</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1052;&#1077;&#1095;</name>
+						<modifier>0</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1055;&#1072;&#1083;&#1072;&#1096;  </name>
+						<modifier>-4</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1057;&#1080;&#1083;&#1086;&#1074;&#1086;&#1081; &#1084;&#1077;&#1095; </name>
+						<modifier>-4</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>Sword!</name>
+						<modifier>0</modifier>
+					</default>
+				</melee_weapon>
+				<melee_weapon>
+					<damage>thr+4 imp</damage>
+					<strength>12&#8224;</strength>
+					<usage>&#1058;&#1099;&#1095;&#1086;&#1082;</usage>
+					<reach>2</reach>
+					<parry>0</parry>
+					<block>No</block>
+					<default>
+						<type>DX</type>
+						<modifier>-5</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1052;&#1077;&#1095;</name>
+						<modifier>0</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1055;&#1072;&#1083;&#1072;&#1096;  </name>
+						<modifier>-4</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1057;&#1080;&#1083;&#1086;&#1074;&#1086;&#1081; &#1084;&#1077;&#1095; </name>
+						<modifier>-4</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>Sword!</name>
+						<modifier>0</modifier>
+					</default>
+				</melee_weapon>
+				<ranged_weapon>
+					<damage>1d-1 imp/per point</damage>
+					<strength>No</strength>
+					<usage>&#1057;&#1085;&#1072;&#1088;&#1103;&#1076; &#1056;&#1099;&#1078;&#1077;&#1085;&#1082;&#1086;</usage>
+					<accuracy>2</accuracy>
+					<range>75/150</range>
+					<rate_of_fire>1</rate_of_fire>
+					<shots>No</shots>
+					<bulk>No</bulk>
+					<recoil>No</recoil>
+					<default>
+						<type>Skill</type>
+						<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
+						<modifier>0</modifier>
+					</default>
+					<default>
+						<type>DX</type>
+						<modifier>-5</modifier>
+					</default>
+				</ranged_weapon>
+				<categories>
+					<category>Melee Weapon</category>
+				</categories>
+			</equipment>
+			<equipment version="4" state="equipped">
+				<quantity>1</quantity>
+				<description>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090; (ST19)</description>
+				<tech_level>2</tech_level>
+				<legality_class>4</legality_class>
+				<value>260</value>
+				<weight>6 lb</weight>
+				<reference>B276</reference>
+				<ranged_weapon>
+					<damage>2d+3 imp</damage>
+					<strength>19&#8224;</strength>
+					<accuracy>4</accuracy>
+					<range>380/475</range>
+					<rate_of_fire>1</rate_of_fire>
+					<shots>1(4)</shots>
+					<bulk>-6</bulk>
+					<default>
+						<type>DX</type>
+						<modifier>-4</modifier>
+					</default>
+					<default>
+						<type>Skill</type>
+						<name>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;</name>
+						<modifier>0</modifier>
+					</default>
+				</ranged_weapon>
+				<categories>
+					<category>Missile Weapon</category>
+				</categories>
+			</equipment>
+			<equipment_container version="4" open="no" state="equipped">
+				<description>&#1050;&#1086;&#1083;&#1095;&#1072;&#1085; &#1087;&#1086;&#1103;&#1089;&#1085;&#1086;&#1081;</description>
+				<tech_level>0</tech_level>
+				<legality_class>4</legality_class>
+				<value>15</value>
+				<weight>1 lb</weight>
+				<reference>B289</reference>
+				<notes>Holds 20 arrows or bolts</notes>
+				<categories>
+					<category>Weapon and Combat Accessories</category>
+				</categories>
+				<equipment version="4" state="equipped">
+					<quantity>20</quantity>
+					<description>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;&#1085;&#1099;&#1081; &#1041;&#1086;&#1083;&#1090;</description>
+					<tech_level>2</tech_level>
+					<legality_class>4</legality_class>
+					<value>2</value>
+					<weight>0.06 lb</weight>
+					<reference>B276</reference>
+					<categories>
+						<category>Ammunition</category>
+						<category>Missile Weapon</category>
+					</categories>
+				</equipment>
+			</equipment_container>
+			<equipment_container version="4" open="yes" state="equipped">
+				<description>&#1050;&#1086;&#1083;&#1095;&#1072;&#1085; &#1087;&#1086;&#1103;&#1089;&#1085;&#1086;&#1081;</description>
+				<tech_level>0</tech_level>
+				<legality_class>4</legality_class>
+				<value>15</value>
+				<weight>1 lb</weight>
+				<reference>B289</reference>
+				<notes>Holds 20 arrows or bolts</notes>
+				<categories>
+					<category>Weapon and Combat Accessories</category>
+				</categories>
+				<equipment version="4" state="equipped">
+					<quantity>20</quantity>
+					<description>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;&#1085;&#1099;&#1081; &#1041;&#1086;&#1083;&#1090;</description>
+					<tech_level>2</tech_level>
+					<legality_class>4</legality_class>
+					<value>2</value>
+					<weight>0.06 lb</weight>
+					<reference>B276</reference>
+					<categories>
+						<category>Ammunition</category>
+						<category>Missile Weapon</category>
+					</categories>
+				</equipment>
+			</equipment_container>
+		</equipment_container>
 	</equipment_list>
 	<note_list>
 		<note version="1">
