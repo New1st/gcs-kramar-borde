@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <character id="edbe0003-0d59-4924-99cc-833cb96e2fc1" version="3">
 	<created_date>2023 Dec 8</created_date>
-	<modified_date>2024 Jun 1 16:22</modified_date>
+	<modified_date>2024 Jun 7 20:43</modified_date>
 	<profile>
 		<player_name>newist</player_name>
 		<campaign>&#1059;&#1073;&#1083;&#1102;&#1076;&#1086;&#1095;&#1085;&#1072;&#1103;</campaign>
@@ -1111,7 +1111,7 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 	<current_hp>12</current_hp>
 	<FP>0</FP>
 	<current_fp>11</current_fp>
-	<total_points>144</total_points>
+	<total_points>147</total_points>
 	<ST>12</ST>
 	<DX>10</DX>
 	<IQ>11</IQ>
@@ -1671,7 +1671,7 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 			<skill version="2">
 				<name>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;</name>
 				<difficulty>DX/E</difficulty>
-				<points>2</points>
+				<points>5</points>
 				<reference>B186</reference>
 				<categories>
 					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
@@ -1685,7 +1685,7 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 			<skill version="2">
 				<name>&#1044;&#1074;&#1091;&#1088;&#1091;&#1095;&#1085;&#1099;&#1081; &#1084;&#1077;&#1095;</name>
 				<difficulty>DX/A</difficulty>
-				<points>8</points>
+				<points>12</points>
 				<reference>B209</reference>
 				<categories>
 					<category>&#1041;&#1086;&#1081;/&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</category>
@@ -2550,7 +2550,7 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				</skill_bonus>
 			</equipment>
 		</equipment_container>
-		<equipment_container version="4" open="no" state="equipped">
+		<equipment_container version="4" open="yes" state="equipped">
 			<description>&#1054;&#1088;&#1091;&#1078;&#1080;&#1077;</description>
 			<legality_class>4</legality_class>
 			<value>0</value>
@@ -2691,7 +2691,7 @@ LhOBsVALufPQWVu7+YDl5eRJJFfZaLt2nMxDSUa5lWaXW1G69EAhx4LOWHf3pEVLkxYvLbIzh9ba
 				<categories>
 					<category>Weapon and Combat Accessories</category>
 				</categories>
-				<equipment version="4" state="equipped">
+				<equipment version="4" state="carried">
 					<quantity>20</quantity>
 					<description>&#1040;&#1088;&#1073;&#1072;&#1083;&#1077;&#1090;&#1085;&#1099;&#1081; &#1041;&#1086;&#1083;&#1090;</description>
 					<tech_level>2</tech_level>
